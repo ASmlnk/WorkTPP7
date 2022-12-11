@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Work TPP-7</string>
+    <string name="logging_label">Logging</string>
+    <string name="title_label">Short Description</string>
+    <string name="defect_fixed_label">Defect Fixed</string>
+    <string name="details_label">Details</string>
+</resources>

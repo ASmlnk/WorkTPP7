@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Работа ТЭЦ-7</string>
+    <string name="logging_label">Записан</string>
+    <string name="title_label">Наименование</string>
+    <string name="defect_fixed_label">Устранен</string>
+    <string name="details_label">Подробности</string>
+</resources>
