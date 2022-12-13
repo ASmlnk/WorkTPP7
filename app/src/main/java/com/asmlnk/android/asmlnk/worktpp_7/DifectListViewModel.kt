@@ -11,6 +11,7 @@ class DefectListViewModel: ViewModel() {
             val defect = Defect()
             defect.title = "Defect #$i"
             defect.logging = i % 2 == 0
+            defect.defectFixed = i % 2 != 0
             defects += defect
         }
 

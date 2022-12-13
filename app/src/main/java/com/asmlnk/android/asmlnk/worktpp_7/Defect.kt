@@ -1,9 +1,12 @@
 package com.asmlnk.android.asmlnk.worktpp_7
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.util.*
 
+@Entity
 data class Defect (
-    val id: UUID = UUID.randomUUID(),
+    @PrimaryKey val id: UUID = UUID.randomUUID(),
     var title: String = "",
     var details: String = "",
     var logging: Boolean = false,

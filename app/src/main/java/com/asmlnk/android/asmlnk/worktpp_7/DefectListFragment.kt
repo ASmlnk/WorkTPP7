@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.graphics.green
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -63,7 +65,8 @@ class DefectListFragment: Fragment() {
     private inner class DefectHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
 
         private lateinit var defect: Defect
-        val titleTextView: TextView = itemView.findViewById(R.id.defect_title)
+        private val titleTextView: TextView = itemView.findViewById(R.id.defect_title)
+        private val defectView: LinearLayout = itemView.findViewById(R.id.defect_view)
 
         init {
             itemView.setOnClickListener(this)
@@ -72,6 +75,12 @@ class DefectListFragment: Fragment() {
         fun bind(defect: Defect) {
             this.defect = defect
             titleTextView.text = this.defect.title
+            if (this.defect.logging) {
+                defectView.setBackgroundResource(R.color.red_defect)
+            }
+            if (this.defect.defectFixed) {
+                defectView.setBackgroundResource(R.color.green_defect)
+            }
         }
 
         override fun onClick(v: View?) {
