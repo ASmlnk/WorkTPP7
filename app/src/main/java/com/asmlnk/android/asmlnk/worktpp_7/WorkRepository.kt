@@ -1,8 +1,8 @@
 package com.asmlnk.android.asmlnk.worktpp_7
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import androidx.room.Room
-import com.asmlnk.android.asmlnk.worktpp_7.database.DefectDao
 import com.asmlnk.android.asmlnk.worktpp_7.database.DefectDatabase
 import java.lang.IllegalStateException
 import java.util.*
@@ -19,8 +19,8 @@ class WorkRepository private constructor(context: Context) {
 
     private val defectDao = database.defectDao()
 
-    fun getDefects(): List<Defect> = defectDao.getDefects()
-    fun getDefect(id: UUID): Defect? = defectDao.getDefect(id)
+    fun getDefects(): LiveData<List<Defect>> = defectDao.getDefects()
+    fun getDefect(id: UUID): LiveData<Defect?> = defectDao.getDefect(id)
 
     companion object {
         private var INSTANCE: WorkRepository? = null

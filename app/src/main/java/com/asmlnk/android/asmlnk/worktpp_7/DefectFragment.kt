@@ -11,6 +11,11 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.Observer
+import java.util.*
+
+private const val ARG_DEFECT_ID = "defect_id"
 
 class DefectFragment: Fragment() {
 
@@ -21,6 +26,9 @@ class DefectFragment: Fragment() {
     private lateinit var defectDetails: EditText
     private  lateinit var loggingCheckBox: CheckBox
     private lateinit var fixedDefectCheckBox: CheckBox
+    private val defectDetailViewModel : DefectDetailViewModel by lazy {
+        ViewModelProvider (this) [DefectDetailViewModel::class.java]
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,6 +61,19 @@ class DefectFragment: Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         defect = Defect()
+        val defectId: UUID = arguments?.getSerializable(ARG_DEFECT_ID) as UUID
+        defectDetailViewModel.loadDefect(defectId)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        defectDetailViewModel.defectLiveData
+            .observe(viewLifecycleOwner, Observer { defect ->     // Нужен import androidx.lifecycle.Observer
+                defect?.let {
+                    this.defect = defect
+                    updateUI()
+                }
+            })
     }
 
     override fun onStart() {
@@ -81,6 +102,24 @@ class DefectFragment: Fragment() {
         defectTitle.addTextChangedListener(titleWatcher)
         defectDetails.addTextChangedListener(detailsWatcher)
 
+    }
+
+    private fun updateUI() {
+        defectTitle.setText(defect.title)
+        defectDetails.setText(defect.details)
+        loggingCheckBox.isChecked = defect.logging
+        fixedDefectCheckBox.isChecked = defect.defectFixed
+    }
+
+    companion object {
+        fun newInstance(defectId: UUID): DefectFragment {
+            val args = Bundle().apply {
+                putSerializable(ARG_DEFECT_ID, defectId)
+            }
+            return DefectFragment().apply {
+                arguments = args
+            }
+        }
     }
 
 }

@@ -2,8 +2,9 @@ package com.asmlnk.android.asmlnk.worktpp_7
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), DefectListFragment.Callbacks {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,6 +19,14 @@ class MainActivity : AppCompatActivity() {
                 .commit()
         }
 
+    }
 
+    override fun onDefectSelected(defectId: UUID) {
+        val fragment = DefectFragment.newInstance(defectId)
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 }

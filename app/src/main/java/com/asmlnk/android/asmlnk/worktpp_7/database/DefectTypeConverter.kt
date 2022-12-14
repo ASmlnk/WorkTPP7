@@ -2,7 +2,6 @@ package com.asmlnk.android.asmlnk.worktpp_7.database
 
 import androidx.room.TypeConverter
 import java.util.*
-import java.util.Date
 
 class DefectTypeConverter {
 

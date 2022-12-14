@@ -1,5 +1,6 @@
 package com.asmlnk.android.asmlnk.worktpp_7
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,19 +8,29 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.graphics.green
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import java.util.*
 
 class DefectListFragment: Fragment() {
 
-    private lateinit var defectRecyclerView: RecyclerView
-    private var adapter: DefectAdapter? = null
+    interface Callbacks {
+        fun onDefectSelected(defectId: UUID)
+    }
 
+    private var callbacks: Callbacks? = null
+    private lateinit var defectRecyclerView: RecyclerView
+    private var adapter: DefectAdapter = DefectAdapter(emptyList())
     private val defectListViewModel : DefectListViewModel by lazy {
         ViewModelProvider (this) [DefectListViewModel::class.java]
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callbacks = context as Callbacks?
     }
 
     override fun onCreateView(
@@ -32,27 +43,28 @@ class DefectListFragment: Fragment() {
 
         defectRecyclerView = view.findViewById(R.id.defect_recycler_view) as RecyclerView
         defectRecyclerView.layoutManager = LinearLayoutManager(context)
-
-        updateUI()
+        defectRecyclerView.adapter = adapter
 
         return view
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        defectListViewModel.defectListLiveData.observe(viewLifecycleOwner, Observer { defects ->
+            defects?.let {
+                updateUI(defects)
+            }
+        })
     }
 
-    private fun updateUI() {
-        val defects = defectListViewModel.defects
+    override fun onDetach() {
+        super.onDetach()
+        callbacks = null
+    }
+
+    private fun updateUI(defects: List<Defect>) {
         adapter = DefectAdapter(defects)
-
-        if (defectRecyclerView.adapter == null) {
-            defectRecyclerView.adapter = adapter
-        } else {
-            adapter!!.setList(defects)
-        }
-
-
+        defectRecyclerView.adapter = adapter
     }
 
 
@@ -84,12 +96,11 @@ class DefectListFragment: Fragment() {
         }
 
         override fun onClick(v: View?) {
-            Toast.makeText(context, "${defect.title}", Toast.LENGTH_LONG).show()
+            callbacks?.onDefectSelected(defect.id)
         }
-
     }
 
-    private inner class DefectAdapter(var lists: MutableList<Defect>): RecyclerView.Adapter<DefectHolder>() {
+    private inner class DefectAdapter(var lists: List<Defect>): RecyclerView.Adapter<DefectHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DefectHolder {
             val view = layoutInflater.inflate(R.layout.list_item_defect, parent, false )
             return DefectHolder(view)
@@ -102,11 +113,11 @@ class DefectListFragment: Fragment() {
 
         override fun getItemCount() = lists.size
 
-        fun setList(newList: List<Defect>) {
+       /* fun setList(newList: List<Defect>) {
             lists.clear()
             lists.addAll(newList)
             notifyDataSetChanged()
-        }
+        }*/
 
 
 
