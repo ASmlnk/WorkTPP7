@@ -5,6 +5,6 @@ import android.app.Application
 class WorkTPP7Application: Application() {
     override fun onCreate() {
         super.onCreate()
-        WorkRepository.initialize(this)
+        DefectRepository.initialize(this)
     }
 }

@@ -70,7 +70,8 @@ class DefectFragment: Fragment() {
         defectDetailViewModel.defectLiveData
             .observe(viewLifecycleOwner, Observer { defect ->     // Нужен import androidx.lifecycle.Observer
                 defect?.let {
-                    this.defect = defect
+                    this.defect = defect   //наблюдаем за DefectDetailViewModel за свойством defectLiveData как только
+                                            // там появиться значение с дефектом он добавиться сюда
                     updateUI()
                 }
             })
@@ -101,7 +102,11 @@ class DefectFragment: Fragment() {
 
         defectTitle.addTextChangedListener(titleWatcher)
         defectDetails.addTextChangedListener(detailsWatcher)
+    }
 
+    override fun onStop() {
+        super.onStop()
+        defectDetailViewModel.saveDefect(defect)
     }
 
     private fun updateUI() {

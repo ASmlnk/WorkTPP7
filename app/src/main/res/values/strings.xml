@@ -4,4 +4,5 @@
     <string name="title_label">Short Description</string>
     <string name="defect_fixed_label">Defect Fixed</string>
     <string name="details_label">Details</string>
+    <string name="new_defect">New Defect</string>
 </resources>

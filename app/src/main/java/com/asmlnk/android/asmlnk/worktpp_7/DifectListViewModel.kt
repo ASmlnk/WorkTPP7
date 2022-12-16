@@ -4,7 +4,13 @@ import androidx.lifecycle.ViewModel
 
 class DefectListViewModel: ViewModel() {
 
-    private val workRepository = WorkRepository.get()
-    val defectListLiveData = workRepository.getDefects()
+    private val defectRepository = DefectRepository.get()
+    val defectListLiveData = defectRepository.getDefects()
 
+    fun addDefect(defect: Defect) {
+        defectRepository.addDefect(defect)
+    }
 }
+
+/*
+ViewModel для DefectListFragment*/

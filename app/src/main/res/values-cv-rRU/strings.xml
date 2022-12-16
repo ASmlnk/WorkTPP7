@@ -5,4 +5,5 @@
     <string name="title_label">Наименование</string>
     <string name="defect_fixed_label">Устранен</string>
     <string name="details_label">Подробности</string>
+    <string name="new_defect">Добавить</string>
 </resources>

@@ -2,9 +2,7 @@ package com.asmlnk.android.asmlnk.worktpp_7
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -33,6 +31,11 @@ class DefectListFragment: Fragment() {
         callbacks = context as Callbacks?
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -53,13 +56,30 @@ class DefectListFragment: Fragment() {
         defectListViewModel.defectListLiveData.observe(viewLifecycleOwner, Observer { defects ->
             defects?.let {
                 updateUI(defects)
-            }
+            }  //Наблюдаем за листом дефектов из БД, как только он появиться в DefectListViewModel, наблюдатель его обнаружит и добавит сюда
         })
     }
 
     override fun onDetach() {
         super.onDetach()
         callbacks = null
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.fragment_defect_list, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.new_defect -> {
+                val defect = Defect()
+                defectListViewModel.addDefect(defect)
+                callbacks?.onDefectSelected(defect.id)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     private fun updateUI(defects: List<Defect>) {
@@ -88,7 +108,9 @@ class DefectListFragment: Fragment() {
             this.defect = defect
             titleTextView.text = this.defect.title
             if (this.defect.logging) {
-                defectView.setBackgroundResource(R.color.red_defect)
+                defectView.apply {
+                    defectView.setBackgroundResource(R.color.red_defect)
+                }
             }
             if (this.defect.defectFixed) {
                 defectView.setBackgroundResource(R.color.green_defect)

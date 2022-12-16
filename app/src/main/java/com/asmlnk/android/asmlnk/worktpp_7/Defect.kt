@@ -10,7 +10,7 @@ data class Defect (
     var title: String = "",
     var details: String = "",
     var logging: Boolean = false,
-    var defectFixed: Boolean = false,
-    var date: Date = Date()
+    var defectFixed: Boolean = false
+    //var date: Date = Date()
     ) {
 }

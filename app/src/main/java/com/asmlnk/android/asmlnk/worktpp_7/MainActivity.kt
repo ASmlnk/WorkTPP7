@@ -2,12 +2,14 @@ package com.asmlnk.android.asmlnk.worktpp_7
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
 import java.util.*
 
 class MainActivity : AppCompatActivity(), DefectListFragment.Callbacks {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
 
