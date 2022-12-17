@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/photo_defect"
-        android:layout_width="80dp"
-        android:layout_height="100dp"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:background="#B5B5B5"
@@ -18,11 +18,13 @@
 
     <ImageButton
         android:id="@+id/select_camera"
-        android:layout_width="80dp"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:background="#00FFFFFF"
+        android:background="@android:drawable/spinner_background"
+        android:backgroundTint="#E0E0E8"
+        android:backgroundTintMode="src_atop"
         android:padding="2dp"
         android:scaleType="fitCenter"
         android:src="@drawable/camera_icon_b"
@@ -52,14 +54,14 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="139dp"
+        android:layout_marginStart="108dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif"
         android:text="@string/logging_label"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/check_box_logging"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/photo_defect"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,13 +69,14 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="119dp"
+        android:layout_marginStart="72dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="26dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif"
         android:text="@string/defect_fixed_label"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/check_box_defect_fixed"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/photo_defect"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -82,26 +85,28 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="36dp"
         android:hint="@string/title_label"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/select_camera"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/check_box_defect_fixed" />
 
     <EditText
         android:id="@+id/defect_details"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="36dp"
         android:hint="@string/details_label"
         android:minHeight="48dp"
         android:textAlignment="viewStart"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/defect_title" />
 
