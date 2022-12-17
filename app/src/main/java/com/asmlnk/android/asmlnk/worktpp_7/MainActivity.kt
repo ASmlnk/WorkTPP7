@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity(), DefectListFragment.Callbacks {
                 .add(R.id.fragment_container, fragment)
                 .commit()
         }
-
     }
 
     override fun onDefectSelected(defectId: UUID) {
