@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import java.io.File
 import java.util.*
 
 class DefectDetailViewModel(): ViewModel() {
@@ -24,6 +25,10 @@ class DefectDetailViewModel(): ViewModel() {
 
     fun saveDefect(defect: Defect) {
         defectRepository.updateDefect(defect)
+    }
+
+    fun getPhotoFile(defect: Defect): File {
+        return defectRepository.getPhotoFile(defect)
     }
 }
 

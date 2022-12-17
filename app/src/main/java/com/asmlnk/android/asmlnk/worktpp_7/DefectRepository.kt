@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.room.Room
 import com.asmlnk.android.asmlnk.worktpp_7.database.DefectDatabase
+import java.io.File
 import java.lang.IllegalStateException
 import java.util.*
 import java.util.concurrent.Executors
@@ -20,6 +21,7 @@ class DefectRepository private constructor(context: Context) {
 
     private val defectDao = database.defectDao()
     private val executor = Executors.newSingleThreadExecutor() // фоновый поток в котором будут выполняться нужные функции
+    private val filesDir = context.applicationContext.filesDir
 
     fun getDefects(): LiveData<List<Defect>> = defectDao.getDefects()
     fun getDefect(id: UUID): LiveData<Defect?> = defectDao.getDefect(id)
@@ -35,6 +37,8 @@ class DefectRepository private constructor(context: Context) {
             defectDao.addDefect(defect)   //функцию которая будет выполняться в фоновом потоке
         }
     }
+
+    fun getPhotoFile(defect: Defect): File = File(filesDir, defect.photoFileName)
 
     companion object {
         private var INSTANCE: DefectRepository? = null

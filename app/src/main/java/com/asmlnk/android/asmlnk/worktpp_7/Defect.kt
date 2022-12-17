@@ -13,4 +13,6 @@ data class Defect (
     var defectFixed: Boolean = false
     //var date: Date = Date()
     ) {
+    val photoFileName
+    get() = "IMG_$id.jpg"
 }

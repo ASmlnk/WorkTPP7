@@ -1,6 +1,11 @@
 package com.asmlnk.android.asmlnk.worktpp_7
 
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.content.pm.ResolveInfo
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -10,16 +15,22 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.Observer
+import java.io.File
 import java.util.*
 
 private const val ARG_DEFECT_ID = "defect_id"
+private const val REQUEST_PHOTO = 2
 
+@Suppress("DEPRECATION")
 class DefectFragment: Fragment() {
 
     private lateinit var defect: Defect
+    private lateinit var photoFile: File
+    private lateinit var photoUri: Uri
     private lateinit var photoDefect: ImageView
     private lateinit var selectCamera: ImageButton
     private lateinit var defectTitle: EditText
@@ -72,6 +83,11 @@ class DefectFragment: Fragment() {
                 defect?.let {
                     this.defect = defect   //наблюдаем за DefectDetailViewModel за свойством defectLiveData как только
                                             // там появиться значение с дефектом он добавиться сюда
+                    photoFile = defectDetailViewModel.getPhotoFile(defect)
+                    photoUri = FileProvider.getUriForFile(requireActivity(),
+                        "com.asmlnk.android.asmlnk.worktpp_7.fileprovider",
+                        photoFile)
+
                     updateUI()
                 }
             })
@@ -102,6 +118,30 @@ class DefectFragment: Fragment() {
 
         defectTitle.addTextChangedListener(titleWatcher)
         defectDetails.addTextChangedListener(detailsWatcher)
+
+        selectCamera.apply {
+            val packageManager: PackageManager = requireActivity().packageManager
+            val captureImage = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            val resolvedActivity: ResolveInfo? = packageManager
+                .resolveActivity(captureImage, PackageManager.MATCH_DEFAULT_ONLY)
+
+            if (resolvedActivity == null) {
+                isEnabled = false
+            }
+
+            setOnClickListener {
+                captureImage.putExtra(MediaStore.EXTRA_OUTPUT, photoUri)
+                val cameraActivities: List<ResolveInfo> = packageManager
+                    .queryIntentActivities(captureImage, PackageManager.MATCH_DEFAULT_ONLY)
+                for (cameraActivity in cameraActivities) {
+                    requireActivity().grantUriPermission(
+                        cameraActivity.activityInfo.packageName,
+                        photoUri,
+                        Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+                }
+                startActivityForResult(captureImage, REQUEST_PHOTO)
+            }
+        }
     }
 
     override fun onStop() {
