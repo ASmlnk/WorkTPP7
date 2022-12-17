@@ -149,11 +149,35 @@ class DefectFragment: Fragment() {
         defectDetailViewModel.saveDefect(defect)
     }
 
+    override fun onDetach() {
+        super.onDetach()
+        requireActivity().revokeUriPermission(photoUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+    }
+
     private fun updateUI() {
         defectTitle.setText(defect.title)
         defectDetails.setText(defect.details)
         loggingCheckBox.isChecked = defect.logging
         fixedDefectCheckBox.isChecked = defect.defectFixed
+        updatePhotoDefect()
+    }
+
+    private fun updatePhotoDefect() {
+        if (photoFile.exists()) {
+            val bitmap = getScaledBitmap(photoFile.path, requireActivity())
+            photoDefect.setImageBitmap(bitmap)
+        } else {
+            photoDefect.setImageDrawable(null)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+       when {
+           requestCode == REQUEST_PHOTO -> {
+               requireActivity().revokeUriPermission(photoUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+               updatePhotoDefect()
+           }
+       }
     }
 
     companion object {
