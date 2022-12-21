@@ -1,10 +1,7 @@
 package com.asmlnk.android.asmlnk.worktpp_7.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.asmlnk.android.asmlnk.worktpp_7.Defect
 import java.util.*
 
@@ -21,4 +18,7 @@ interface DefectDao {
 
     @Insert
     fun addDefect(defect: Defect)
+
+    @Delete
+    fun deleteDefect(defect: Defect)
 }

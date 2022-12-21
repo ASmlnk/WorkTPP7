@@ -94,7 +94,7 @@ class DefectListFragment: Fragment() {
         }
     }
 
-    private inner class DefectHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
+    private inner class DefectHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener, View.OnLongClickListener {
 
         private lateinit var defect: Defect
         private val titleTextView: TextView = itemView.findViewById(R.id.defect_title)
@@ -102,6 +102,7 @@ class DefectListFragment: Fragment() {
 
         init {
             itemView.setOnClickListener(this)
+            itemView.setOnLongClickListener(this)
         }
 
         fun bind(defect: Defect) {
@@ -120,6 +121,14 @@ class DefectListFragment: Fragment() {
         override fun onClick(v: View?) {
             callbacks?.onDefectSelected(defect.id)
         }
+
+        override fun onLongClick(v: View?): Boolean {
+
+                defectListViewModel.deleteDefect(defect)
+
+            return true
+        }
+
     }
 
     private inner class DefectAdapter(var lists: List<Defect>): RecyclerView.Adapter<DefectHolder>() {

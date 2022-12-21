@@ -38,6 +38,12 @@ class DefectRepository private constructor(context: Context) {
         }
     }
 
+    fun deleteDefect(defect: Defect) {
+        executor.execute {
+            defectDao.deleteDefect(defect)
+        }
+    }
+
     fun getPhotoFile(defect: Defect): File = File(filesDir, defect.photoFileName)
 
     companion object {

@@ -10,6 +10,10 @@ class DefectListViewModel: ViewModel() {
     fun addDefect(defect: Defect) {
         defectRepository.addDefect(defect)
     }
+
+    fun deleteDefect(defect: Defect) {
+        defectRepository.deleteDefect(defect)
+    }
 }
 
 /*
