@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/photo_defect"
         android:layout_width="120dp"
-        android:layout_height="160dp"
+        android:layout_height="230dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:background="#B5B5B5"
@@ -99,7 +99,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="132dp"
         android:layout_marginEnd="36dp"
         android:hint="@string/details_label"
         android:minHeight="48dp"

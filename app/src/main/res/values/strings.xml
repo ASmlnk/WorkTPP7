@@ -5,4 +5,6 @@
     <string name="defect_fixed_label">Defect Fixed</string>
     <string name="details_label">Details</string>
     <string name="new_defect">New Defect</string>
+    <string name="equipment_work">Equipment at work</string>
+    <string name="defects">Defects</string>
 </resources>

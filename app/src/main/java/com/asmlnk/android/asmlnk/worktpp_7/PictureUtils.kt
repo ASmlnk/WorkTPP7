@@ -44,3 +44,4 @@ fun getScaledBitmap(path: String, destWidth: Int, destHeight: Int): Bitmap {
     /*Чтение и создание окончательного растрового изображения*/
     return BitmapFactory.decodeFile(path, options)
 }
+

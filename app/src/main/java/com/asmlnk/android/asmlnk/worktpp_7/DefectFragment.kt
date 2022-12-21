@@ -3,14 +3,18 @@ package com.asmlnk.android.asmlnk.worktpp_7
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
+import android.graphics.Bitmap
+import android.graphics.Matrix
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewTreeObserver
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
@@ -37,6 +41,9 @@ class DefectFragment: Fragment() {
     private lateinit var defectDetails: EditText
     private  lateinit var loggingCheckBox: CheckBox
     private lateinit var fixedDefectCheckBox: CheckBox
+    private var width = 0
+    private var height = 0
+
     private val defectDetailViewModel : DefectDetailViewModel by lazy {
         ViewModelProvider (this) [DefectDetailViewModel::class.java]
     }
@@ -54,6 +61,19 @@ class DefectFragment: Fragment() {
         defectDetails = view.findViewById(R.id.defect_details) as EditText
         loggingCheckBox = view.findViewById(R.id.check_box_logging) as CheckBox
         fixedDefectCheckBox = view.findViewById(R.id.check_box_defect_fixed) as CheckBox
+
+        val observer = photoDefect.viewTreeObserver
+        observer.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+
+                photoDefect.viewTreeObserver.removeOnGlobalLayoutListener(this)
+
+                width = photoDefect.width
+                height = photoDefect.measuredHeight
+                //updateSize(width, height)
+                Log.d("My", "width = $width heidht = $height")
+            }
+        })
 
         loggingCheckBox.apply {
             setOnCheckedChangeListener { _, isChecked ->
@@ -142,6 +162,15 @@ class DefectFragment: Fragment() {
                 startActivityForResult(captureImage, REQUEST_PHOTO)
             }
         }
+        photoDefect.apply {
+            setOnClickListener {
+                if (photoFile.exists()) {
+                    PhotoDialogDefect.newInstance(photoFile).apply {
+                        show(this@DefectFragment.requireFragmentManager(), "dialog")
+                    }
+                }
+            }
+        }
     }
 
     override fun onStop() {
@@ -164,8 +193,27 @@ class DefectFragment: Fragment() {
 
     private fun updatePhotoDefect() {
         if (photoFile.exists()) {
-            val bitmap = getScaledBitmap(photoFile.path, requireActivity())
-            photoDefect.setImageBitmap(bitmap)
+            if (width > 0 && height > 0 ) {
+                val bitmap = getScaledBitmap(photoFile.path, width, height )
+                val matrix = Matrix()
+                if (bitmap.height < bitmap.width) {
+                    matrix.postRotate(90F)
+                } else {
+                    matrix.postRotate(0F)
+                }
+                val b = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+                photoDefect.setImageBitmap(b)
+            } else {
+                val bitmap = getScaledBitmap(photoFile.path, requireActivity() ) /*requireActivity()*/
+                val matrix = Matrix()
+                if (bitmap.height < bitmap.width) {
+                    matrix.postRotate(90F)
+                } else {
+                    matrix.postRotate(0F)
+                }
+                val b = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+                photoDefect.setImageBitmap(b)
+            }
         } else {
             photoDefect.setImageDrawable(null)
         }

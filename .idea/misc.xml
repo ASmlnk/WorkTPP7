@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/activity_main.xml" value="0.2520833333333333" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/center_list_menu.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/defect_list_fragment.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/defect_photo.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/equipment_at_work.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/fragment_defect.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/list_item_defect.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/menu/fragment_defect_list.xml" value="0.26510416666666664" />

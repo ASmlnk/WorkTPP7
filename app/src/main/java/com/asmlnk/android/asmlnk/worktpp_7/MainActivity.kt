@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
 import java.util.*
 
-class MainActivity : AppCompatActivity(), DefectListFragment.Callbacks {
+class MainActivity : AppCompatActivity(), DefectListFragment.Callbacks, WorkTPP7Menu.Callbacks {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity(), DefectListFragment.Callbacks {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
 
         if (currentFragment == null) {
-            val fragment = DefectListFragment.newInstance()
+            val fragment = WorkTPP7Menu.newInstance()
             supportFragmentManager
                 .beginTransaction()
                 .add(R.id.fragment_container, fragment)
@@ -24,6 +24,15 @@ class MainActivity : AppCompatActivity(), DefectListFragment.Callbacks {
 
     override fun onDefectSelected(defectId: UUID) {
         val fragment = DefectFragment.newInstance(defectId)
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onDefectListSelected() {
+        val fragment = DefectListFragment.newInstance()
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, fragment)
