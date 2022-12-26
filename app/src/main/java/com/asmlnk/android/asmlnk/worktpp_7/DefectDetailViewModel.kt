@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import java.io.File
 import java.util.*
 
-class DefectDetailViewModel(): ViewModel() {
+class DefectDetailViewModel: ViewModel() {
 
     /*ViewModel для DefectFragment*/
 
