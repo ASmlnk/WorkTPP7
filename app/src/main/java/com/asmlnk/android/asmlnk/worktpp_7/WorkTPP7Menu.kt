@@ -13,6 +13,7 @@ class WorkTPP7Menu: Fragment() {
 
     interface Callbacks {
         fun onDefectListSelected()
+        fun onEquipmentListSelected()
     }
 
     private var callbacks: Callbacks? = null
@@ -36,6 +37,10 @@ class WorkTPP7Menu: Fragment() {
 
         defects.setOnClickListener {
             callbacks?.onDefectListSelected()
+        }
+
+        equipmentAtWork.setOnClickListener {
+            callbacks?.onEquipmentListSelected()
         }
 
         return view

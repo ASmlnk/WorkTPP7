@@ -5,7 +5,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
 import java.util.*
 
-class MainActivity : AppCompatActivity(), DefectListFragment.Callbacks, WorkTPP7Menu.Callbacks {
+class MainActivity :
+    AppCompatActivity(),
+    DefectListFragment.Callbacks,
+    WorkTPP7Menu.Callbacks {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,6 +37,15 @@ class MainActivity : AppCompatActivity(), DefectListFragment.Callbacks, WorkTPP7
 
     override fun onDefectListSelected() {
         val fragment = DefectListFragment.newInstance()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onEquipmentListSelected() {
+        val fragment = EquipmentInOperationListFragment.newInstance()
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, fragment)
