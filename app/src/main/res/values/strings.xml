@@ -7,4 +7,7 @@
     <string name="new_defect">New Defect</string>
     <string name="equipment_work">Equipment at work</string>
     <string name="defects">Defects</string>
+    <string name="boiler_unit">Boiler Unit</string>
+    <string name="turbogenerator">Turbogenerator</string>
+    <string name="other_equipment">Other Equipment</string>
 </resources>

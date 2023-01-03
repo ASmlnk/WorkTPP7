@@ -8,4 +8,7 @@
     <string name="new_defect">Добавить</string>
     <string name="equipment_work">Оборудование в работе</string>
     <string name="defects">Дефекты</string>
+    <string name="boiler_unit">Котлоагрегаты</string>
+    <string name="turbogenerator">Турбогенераторы</string>
+    <string name="other_equipment">Остальное</string>
 </resources>

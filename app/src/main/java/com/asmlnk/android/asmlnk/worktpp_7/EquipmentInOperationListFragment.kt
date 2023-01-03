@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 class EquipmentInOperationListFragment: Fragment() {
 
 
-    private lateinit var equipmentRecyclerView: RecyclerView
-    private var adapter: AdapterEquipmentCategory? = null
+   // private lateinit var equipmentRecyclerView: RecyclerView
+   // private var adapter: AdapterEquipmentCategory? = null
 
     private val equipmentInOperationViewModel: EquipmentInOperationViewModel by lazy {
         ViewModelProvider (this) [EquipmentInOperationViewModel :: class.java]
@@ -25,27 +25,24 @@ class EquipmentInOperationListFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.defect_list_fragment, container, false)
+        val view = inflater.inflate(R.layout.equipment_work, container, false)
 
-        equipmentRecyclerView = view.findViewById(R.id.defect_recycler_view) as RecyclerView
+        /*equipmentRecyclerView = view.findViewById(R.id.defect_recycler_view) as RecyclerView
         equipmentRecyclerView.layoutManager = LinearLayoutManager(context)
-        equipmentRecyclerView.adapter = adapter
+        equipmentRecyclerView.adapter = adapter*/
 
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        updateUI(listAdapter)
+        /*updateUI(listAdapter)*/
     }
 
-
-
-
-    private fun updateUI(list: List<String>) {
+    /*private fun updateUI(list: List<String>) {
         adapter = AdapterEquipmentCategory(list)
         equipmentRecyclerView.adapter = adapter
-    }
+    }*/
 
     companion object {
         fun newInstance(): EquipmentInOperationListFragment {
