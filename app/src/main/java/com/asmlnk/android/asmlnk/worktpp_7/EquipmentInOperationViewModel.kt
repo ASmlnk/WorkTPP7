@@ -9,7 +9,7 @@ class EquipmentInOperationViewModel: ViewModel() {
     val dv1a = ElectricMotor("ДВ-1А")
     val dv1b = ElectricMotor("ДВ-1Б")
     val vgdn1 = ElectricMotor("ВГДН-1")
-    val boilerUnit1 = listOf(d1a, d1b, dv1a, dv1b, vgdn1)
+    val listBoilerUnit1 = listOf(d1a, d1b, dv1a, dv1b, vgdn1)
 
     val d6a = ElectricMotor("Д-7А")
     val d6b = ElectricMotor("Д-7Б")
@@ -18,7 +18,7 @@ class EquipmentInOperationViewModel: ViewModel() {
     val dv6b1 = ElectricMotor("ДВ-7Б Iск")
     val dv6b2 = ElectricMotor("ДВ-7Б IIск")
     val vgdn6 = ElectricMotor("ВГДН-7")
-    val boilerUnit6 = listOf(d6a, d6b, dv6a1, dv6a2, dv6b1, dv6b2, vgdn6)
+    val listBoilerUnit6 = listOf(d6a, d6b, dv6a1, dv6a2, dv6b1, dv6b2, vgdn6)
 
     val d7a = ElectricMotor("Д-7А")
     val d7b = ElectricMotor("Д-7Б")
@@ -27,7 +27,7 @@ class EquipmentInOperationViewModel: ViewModel() {
     val dv7b1 = ElectricMotor("ДВ-7Б Iск")
     val dv7b2 = ElectricMotor("ДВ-7Б IIск")
     val vgdn7 = ElectricMotor("ВГДН-7")
-    val boilerUnit7 = listOf(d7a, d7b, dv7a1, dv7a2, dv7b1, dv7b2, vgdn7)
+    val listBoilerUnit7 = listOf(d7a, d7b, dv7a1, dv7a2, dv7b1, dv7b2, vgdn7)
 
     val d8a = ElectricMotor("Д-8А")
     val d8b = ElectricMotor("Д-8Б")
@@ -36,7 +36,7 @@ class EquipmentInOperationViewModel: ViewModel() {
     val dv8b1 = ElectricMotor("ДВ-8Б Iск")
     val dv8b2 = ElectricMotor("ДВ-8Б IIск")
     val vgdn8 = ElectricMotor("ВГДН-8")
-    val boilerUnit8 = listOf(d8a, d8b, dv8a1, dv8a2, dv8b1, dv8b2, vgdn8)
+    val listBoilerUnit8 = listOf(d8a, d8b, dv8a1, dv8a2, dv8b1, dv8b2, vgdn8)
 
     val d9a = ElectricMotor("Д-9А")
     val d9b = ElectricMotor("Д-9Б")
@@ -45,14 +45,34 @@ class EquipmentInOperationViewModel: ViewModel() {
     val dv9b1 = ElectricMotor("ДВ-9Б Iск")
     val dv9b2 = ElectricMotor("ДВ-9Б IIск")
     val vgdn9 = ElectricMotor("ВГДН-9")
-    val boilerUnit9 = listOf(d9a, d9b, dv9a1, dv9a2, dv9b1, dv9b2, vgdn9)
+    val listBoilerUnit9 = listOf(d9a, d9b, dv9a1, dv9a2, dv9b1, dv9b2, vgdn9)
 
-    val boilerUnits = mapOf(
-        "К/А 1" to boilerUnit1,
-        "К/А 6" to boilerUnit6,
-        "К/А 7" to boilerUnit7,
-        "К/А 8" to boilerUnit8,
-        "К/А 9" to boilerUnit9)
+    val boilerUnit1 = EquipmentCategory("К/А-1", listBoilerUnit1)
+    val boilerUnit6 = EquipmentCategory("К/А-6", listBoilerUnit6)
+    val boilerUnit7 = EquipmentCategory("К/А-7", listBoilerUnit7)
+    val boilerUnit8 = EquipmentCategory("К/А-8", listBoilerUnit8)
+    val boilerUnit9 = EquipmentCategory("К/А-9", listBoilerUnit9)
+
+
+
+
+
+
+    inner class  EquipmentCategory(val name: String, val listElectricMotor:  List<ElectricMotor>) {
+
+        private fun collectAll (listElectricMotor: List<ElectricMotor>) {
+            for (item in listElectricMotor) {
+                item.schemaState = true
+            }
+        }
+
+        private fun takeApartAll (listElectricMotor: List<ElectricMotor>) {
+            for (item in listElectricMotor) {
+                item.schemaState = false
+            }
+        }
+
+    }
 
 
 
