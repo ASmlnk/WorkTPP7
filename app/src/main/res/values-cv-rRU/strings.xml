@@ -11,4 +11,6 @@
     <string name="boiler_unit">Котлоагрегаты</string>
     <string name="turbogenerator">Турбогенераторы</string>
     <string name="other_equipment">Остальное</string>
+    <string name="collected_all">Cобран</string>
+    <string name="dismantled_all">Разобран</string>
 </resources>

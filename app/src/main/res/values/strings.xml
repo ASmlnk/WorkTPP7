@@ -10,4 +10,6 @@
     <string name="boiler_unit">Boiler Unit</string>
     <string name="turbogenerator">Turbogenerator</string>
     <string name="other_equipment">Other Equipment</string>
+    <string name="collected_all">Collected All</string>
+    <string name="dismantled_all">Dismantled All</string>
 </resources>

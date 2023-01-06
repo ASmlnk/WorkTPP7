@@ -8,8 +8,17 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 class EquipmentInOperationListFragment: Fragment() {
+
+    private lateinit var viewPagerBoilerUnit: ViewPager2
+    private lateinit var viewPagerTurbogenerator: ViewPager2
+    private lateinit var tabLayoutTurbogenerator: TabLayout
+    private lateinit var tabLayoutBoilerUnit: TabLayout
+    private var adapter: AdapterEquipmentCategory? = null
 
     private val equipmentInOperationViewModel: EquipmentInOperationViewModel by lazy {
         ViewModelProvider (this) [EquipmentInOperationViewModel :: class.java]
@@ -22,7 +31,31 @@ class EquipmentInOperationListFragment: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.equipment_work, container, false)
 
+        viewPagerBoilerUnit = view.findViewById(R.id.pager_boiler_unit) as ViewPager2
+        tabLayoutBoilerUnit = view.findViewById(R.id.tab_layout_boiler_unit) as TabLayout
+        viewPagerTurbogenerator = view.findViewById(R.id.pager_turbogenerator) as ViewPager2
+        tabLayoutTurbogenerator = view.findViewById(R.id.tab_layout_turbogenerator) as TabLayout
+
+
+
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val listBoilerUnit = equipmentInOperationViewModel.listBoilerUnit
+        val listTurbogenerator = equipmentInOperationViewModel.listTurbogenerator
+
+        adapter = AdapterEquipmentCategory(listBoilerUnit)
+        viewPagerBoilerUnit.adapter = adapter
+
+        adapter = AdapterEquipmentCategory(listTurbogenerator)
+        viewPagerTurbogenerator.adapter = adapter
+        TabLayoutMediator(tabLayoutBoilerUnit, viewPagerBoilerUnit) { tab, position ->
+            tab.text = listBoilerUnit[position].name
+        }.attach()
+
     }
 
     companion object {

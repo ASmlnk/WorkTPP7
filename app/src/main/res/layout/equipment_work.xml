@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:orientation="vertical"
-             android:layout_width="fill_parent"
-             android:layout_height="fill_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -26,6 +27,14 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="24sp"/>
 
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout_boiler_unit"
+                app:tabIndicatorColor="@color/teal_200"
+                app:tabIndicatorHeight="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/pager_boiler_unit"
             android:layout_width="match_parent"
@@ -46,6 +55,13 @@
             android:text="@string/turbogenerator"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="24sp"/>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout_turbogenerator"
+                app:tabIndicatorColor="@color/teal_200"
+                app:tabIndicatorHeight="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/pager_turbogenerator"

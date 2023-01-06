@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="-12dp"
+    tools:layout_editor_absoluteY="0dp">
+
+    <CheckBox
+        android:id="@+id/electric_motor_mns_post"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="МНС-1="
+        app:layout_constraintStart_toEndOf="@+id/electric_motor_vpu"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_mns" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_mnu_b"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="МНУ-1Б"
+        app:layout_constraintStart_toEndOf="@+id/electric_motor_kn_2"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_mnu_a" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_mnu_post"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="МНУ-1="
+        app:layout_constraintStart_toEndOf="@+id/electric_motor_kn_3"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_mnu_b" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_mnu_a"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="МНУ-1А"
+        app:layout_constraintStart_toEndOf="@+id/electric_motor_kn_1"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_mns_post" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_mns"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="МНС-1"
+        app:layout_constraintStart_toEndOf="@+id/electric_motor_pmn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_sln_a"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="СлН-1Б"
+        app:layout_constraintStart_toEndOf="@+id/electric_motor_sln_b"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_kn_3" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_kn_3"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="КН-1В"
+        app:layout_constraintStart_toEndOf="@+id/electric_motor_knb_v"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_kn_2" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_kn_2"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="КН-1Б"
+        app:layout_constraintStart_toEndOf="@+id/electric_motor_knb_b"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_kn_1" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_kn_1"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="КН-1А"
+        app:layout_constraintStart_toEndOf="@+id/electric_motor_knb_a"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_vpu" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_vpu"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="ВПУ-1"
+        app:layout_constraintStart_toEndOf="@+id/electric_motor_gon_b"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_pmn" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_gon_a"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="ГОН-1А"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_gon_b"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="ГОН-1Б"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_gon_a" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_knb_a"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="КНБ-1А"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_gon_b" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_knb_b"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="КНБ-1Б"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_knb_a" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_sln_b"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="СлН-1А"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_knb_v" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_knb_v"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="КНБ-1В"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/electric_motor_knb_b" />
+
+    <CheckBox
+        android:id="@+id/electric_motor_pmn"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        android:padding="10dp"
+        android:text="ПМН-1"
+        app:layout_constraintStart_toEndOf="@+id/electric_motor_gon_a"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/electric_motor_collected_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="460dp"
+        android:padding="10dp"
+        android:text="@string/collected_all"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/electric_motor_dismantled_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="460dp"
+        android:layout_marginEnd="20dp"
+        android:padding="10dp"
+        android:text="@string/dismantled_all"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
