@@ -18,7 +18,8 @@ class EquipmentInOperationListFragment: Fragment() {
     private lateinit var viewPagerTurbogenerator: ViewPager2
     private lateinit var tabLayoutTurbogenerator: TabLayout
     private lateinit var tabLayoutBoilerUnit: TabLayout
-    private var adapter: AdapterEquipmentCategory? = null
+    private var adapterBoiler: AdapterEquipmentCategory? = null
+    private var adapterTurbogenerator: AdapterEquipmentCategory? = null
 
     private val equipmentInOperationViewModel: EquipmentInOperationViewModel by lazy {
         ViewModelProvider (this) [EquipmentInOperationViewModel :: class.java]
@@ -47,14 +48,18 @@ class EquipmentInOperationListFragment: Fragment() {
         val listBoilerUnit = equipmentInOperationViewModel.listBoilerUnit
         val listTurbogenerator = equipmentInOperationViewModel.listTurbogenerator
 
-        adapter = AdapterEquipmentCategory(listBoilerUnit)
-        viewPagerBoilerUnit.adapter = adapter
-
-        adapter = AdapterEquipmentCategory(listTurbogenerator)
-        viewPagerTurbogenerator.adapter = adapter
+        adapterBoiler = AdapterEquipmentCategory(listBoilerUnit)
+        viewPagerBoilerUnit.adapter = adapterBoiler
         TabLayoutMediator(tabLayoutBoilerUnit, viewPagerBoilerUnit) { tab, position ->
             tab.text = listBoilerUnit[position].name
         }.attach()
+
+        adapterTurbogenerator = AdapterEquipmentCategory(listTurbogenerator)
+        viewPagerTurbogenerator.adapter = adapterTurbogenerator
+        TabLayoutMediator(tabLayoutTurbogenerator, viewPagerTurbogenerator) { tab, position ->
+            tab.text = listTurbogenerator[position].name
+        }.attach()
+
 
     }
 

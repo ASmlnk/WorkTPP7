@@ -4,18 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/activity_main.xml" value="0.2520833333333333" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/center_list_menu.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/defect_list_fragment.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/defect_photo.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/equipment_at_work.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/equipment_work.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/fragment_defect.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/list_item_defect.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/list_item_equipment_work.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/view_pager_boler_unit.xml" value="0.264" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/view_pager_boler_unit1.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/view_pager_turbogenerator.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/menu/fragment_defect_list.xml" value="0.26510416666666664" />
+        <entry key="..\:/WorkTPP7/app/src/main/res/layout/equipment_at_work.xml" value="0.196875" />
+        <entry key="..\:/WorkTPP7/app/src/main/res/layout/equipment_work.xml" value="0.22" />
+        <entry key="..\:/WorkTPP7/app/src/main/res/layout/k.xml" value="0.25" />
+        <entry key="..\:/WorkTPP7/app/src/main/res/layout/list_item_defect.xml" value="0.196875" />
+        <entry key="..\:/WorkTPP7/app/src/main/res/layout/list_item_equipment_work.xml" value="0.22" />
+        <entry key="..\:/WorkTPP7/app/src/main/res/layout/view_pager_boler_unit.xml" value="0.25" />
+        <entry key="..\:/WorkTPP7/app/src/main/res/layout/view_pager_other_equipment.xml" value="0.22" />
+        <entry key="..\:/WorkTPP7/app/src/main/res/layout/view_pager_turbogenerator.xml" value="0.33" />
         <entry key="..\:/WorkTPP7/app/src/main/res/xml/files.xml" value="0.19583333333333333" />
       </map>
     </option>

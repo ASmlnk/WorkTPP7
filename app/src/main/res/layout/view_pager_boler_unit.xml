@@ -10,8 +10,8 @@
         android:id="@+id/electric_motor_1"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
         android:button="@null"
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
@@ -23,20 +23,20 @@
         android:id="@+id/electric_motor_2"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
         android:button="@null"
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="2"
-        app:layout_constraintStart_toEndOf="@+id/electric_motor_1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/electric_motor_3"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         android:button="@null"
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
@@ -49,33 +49,33 @@
         android:id="@+id/electric_motor_4"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
         android:button="@null"
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="4"
-        app:layout_constraintStart_toEndOf="@+id/electric_motor_3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_2" />
 
     <CheckBox
         android:id="@+id/electric_motor_6"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
         android:button="@null"
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="6"
-        app:layout_constraintStart_toEndOf="@+id/electric_motor_5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_4" />
 
     <CheckBox
         android:id="@+id/electric_motor_5"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         android:button="@null"
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
@@ -88,7 +88,7 @@
         android:id="@+id/electric_motor_7"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="20dp"
         android:button="@null"
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
@@ -102,23 +102,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="330dp"
+        android:layout_marginBottom="10dp"
         android:padding="10dp"
         android:text="@string/collected_all"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/electric_motor_dismantled_all"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="330dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
         android:padding="10dp"
         android:text="@string/dismantled_all"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

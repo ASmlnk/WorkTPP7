@@ -26,12 +26,10 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
             }
             else -> {
                 val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.view_pager_turbogenerator, parent, false)
+                    .inflate(R.layout.view_pager_boler_unit, parent, false)
                 EquipmentHolderTurbogenerator(view)
             }
         }
-
-
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -63,49 +61,38 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
         val collectedAll: TextView = itemView.findViewById(R.id.electric_motor_collected_all)
         val dismantledAll: TextView = itemView.findViewById(R.id.electric_motor_dismantled_all)
 
-        fun checkBox(checkBox: CheckBox, it: Int, list: List<ElectricMotor>) {
-            checkBox.apply {
-                setOnCheckedChangeListener { _, isChecked ->
-                    list[it].schemaState = isChecked
-                }
-                text = list[it].name
-            }
-        }
-
         fun bind(listElectricMotor: List<ElectricMotor>) {
 
-            checkBox(checkBox1, 0, listElectricMotor)
-            checkBox(checkBox2, 1, listElectricMotor)
-            checkBox(checkBox3, 2, listElectricMotor)
-            checkBox(checkBox4, 3, listElectricMotor)
-            checkBox(checkBox5, 4, listElectricMotor)
-            checkBox(checkBox6, 5, listElectricMotor)
-            checkBox(checkBox7, 6, listElectricMotor)
+            fun checkBox(checkBox: CheckBox, it: Int) {
+                checkBox.apply {
+                    setOnCheckedChangeListener { _, isChecked ->
+                        listElectricMotor[it].schemaState = isChecked
+                    }
+                    text = listElectricMotor[it].name
+                }
+            }
+
+            checkBox(checkBox1, 0)
+            checkBox(checkBox2, 1)
+            checkBox(checkBox3, 2)
+            checkBox(checkBox4, 3)
+            checkBox(checkBox5, 4)
+            checkBox(checkBox6, 5)
+            checkBox(checkBox7, 6)
+
+            val listCheckBox = listOf(checkBox1,checkBox2,checkBox3,checkBox4,checkBox5,checkBox6,checkBox7)
 
             collectedAll.setOnClickListener {
-                checkBox1.isChecked = true
-                checkBox2.isChecked = true
-                checkBox3.isChecked = true
-                checkBox4.isChecked = true
-                checkBox5.isChecked = true
-                checkBox6.isChecked = true
-                checkBox7.isChecked = true
+                listCheckBox.forEach { it.isChecked = true }
             }
 
             dismantledAll.setOnClickListener {
-                checkBox1.isChecked = false
-                checkBox2.isChecked = false
-                checkBox3.isChecked = false
-                checkBox4.isChecked = false
-                checkBox5.isChecked = false
-                checkBox6.isChecked = false
-                checkBox7.isChecked = false
+                listCheckBox.forEach { it.isChecked = false }
             }
         }
-
     }
 
-    inner class EquipmentHolderTurbogenerator(view: View) : RecyclerView.ViewHolder(view) {
+    private inner class EquipmentHolderTurbogenerator(view: View) : RecyclerView.ViewHolder(view) {
 
         val checkBoxGonA: CheckBox = itemView.findViewById(R.id.electric_motor_gon_a)
         val checkBoxGonB: CheckBox = itemView.findViewById(R.id.electric_motor_gon_b)
@@ -127,48 +114,68 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
         val collectedAll: TextView = itemView.findViewById(R.id.electric_motor_collected_all)
         val dismantledAll: TextView = itemView.findViewById(R.id.electric_motor_dismantled_all)
 
-        fun checkBox (checkBox: CheckBox, key: String, map: Map<String, ElectricMotor>) {
-            if (map.containsKey(key)) {
-                checkBox.apply {
-                    setOnCheckedChangeListener { _, isChecked ->
-                        map.getValue(key).schemaState = isChecked
-                    }
-                    text = map.getValue(key).name
-                }
-            } else {
-                checkBox.isVisible = false
-            }
-        }
+
 
         fun bind(mapElectricMotor: Map<String, ElectricMotor>) {
 
-            checkBox(checkBoxGonA, "ГОН-А", mapElectricMotor)
-            checkBox(checkBoxGonB, "ГОН-Б", mapElectricMotor)
-            checkBox(checkBoxPmn, "ПМН", mapElectricMotor)
-            checkBox(checkBoxVpu, "ВПУ", mapElectricMotor)
-            checkBox(checkBoxMns, "МНС", mapElectricMotor)
-            checkBox(checkBoxMnsPost, "МНС=", mapElectricMotor)
-            checkBox(checkBoxMnuPost, "МНУ=", mapElectricMotor)
-            checkBox(checkBoxMnuA, "МНУ-А", mapElectricMotor)
-            checkBox(checkBoxMnuB, "МНУ-Б", mapElectricMotor)
-            checkBox(checkBoxKnbA, "КНБ-А", mapElectricMotor)
-            checkBox(checkBoxKnbB, "КНБ-Б", mapElectricMotor)
-            checkBox(checkBoxKnbV, "КНБ-В", mapElectricMotor)
-            checkBox(checkBoxKnA, "КН-А", mapElectricMotor)
-            checkBox(checkBoxKnB, "КН-Б", mapElectricMotor)
-            checkBox(checkBoxKnV, "КН-В", mapElectricMotor)
-            checkBox(checkBoxSlnA, "СлН-А", mapElectricMotor)
-            checkBox(checkBoxSlnB, "СлН-Б", mapElectricMotor)
+            fun checkBox (checkBox: CheckBox, key: String) {
+                if (mapElectricMotor.containsKey(key)) {
+                    checkBox.apply {
+                        setOnCheckedChangeListener { _, isChecked ->
+                            mapElectricMotor.getValue(key).schemaState = isChecked
+                        }
+                        text = mapElectricMotor.getValue(key).name
+                    }
+                } else {
+                    checkBox.isVisible = false
+                }
+            }
 
+            checkBox(checkBoxGonA, "ГОН-А")
+            checkBox(checkBoxGonB, "ГОН-Б")
+            checkBox(checkBoxPmn, "ПМН")
+            checkBox(checkBoxVpu, "ВПУ")
+            checkBox(checkBoxMns, "МНС")
+            checkBox(checkBoxMnsPost, "МНС=")
+            checkBox(checkBoxMnuPost, "МНУ=")
+            checkBox(checkBoxMnuA, "МНУ-А")
+            checkBox(checkBoxMnuB, "МНУ-Б")
+            checkBox(checkBoxKnbA, "КНБ-А")
+            checkBox(checkBoxKnbB, "КНБ-Б")
+            checkBox(checkBoxKnbV, "КНБ-В")
+            checkBox(checkBoxKnA, "КН-А")
+            checkBox(checkBoxKnB, "КН-Б")
+            checkBox(checkBoxKnV, "КН-В")
+            checkBox(checkBoxSlnA, "СлН-А")
+            checkBox(checkBoxSlnB, "СлН-Б")
 
+            val listCheckBox = listOf(checkBoxGonA,
+                    checkBoxGonB,
+                    checkBoxPmn,
+                    checkBoxVpu,
+                    checkBoxMns,
+                    checkBoxMnsPost,
+                    checkBoxMnuPost,
+                    checkBoxMnuA,
+                    checkBoxMnuB,
+                    checkBoxKnbA,
+                    checkBoxKnbB,
+                    checkBoxKnbV,
+                    checkBoxKnA,
+                    checkBoxKnB,
+                    checkBoxKnV,
+                    checkBoxSlnA,
+                    checkBoxSlnB)
 
-
+            collectedAll.setOnClickListener {
+                listCheckBox.forEach { it.isChecked = true }
+            }
+            dismantledAll.setOnClickListener {
+                listCheckBox.forEach { it.isChecked = false }
+            }
 
 
         }
-
-
-
     }
 }
 

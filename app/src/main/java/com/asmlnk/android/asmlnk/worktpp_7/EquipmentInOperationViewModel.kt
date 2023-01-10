@@ -198,8 +198,8 @@ class EquipmentInOperationViewModel: ViewModel() {
         "МНУ-Б" to mnu6b,
         "ВПУ" to vpu6,
         "ПМН" to pmn6,
-        "НТВ-3" to ntv3,
-        "НТВ-4" to ntv4)
+        "СлН-А" to ntv3,
+        "СлН-Б" to ntv4)
 
     val turbogenerator1 = EquipmentCategory("ТГ-1", mapElectricMotor = mapTurbogenerator1)
     val turbogenerator3 = EquipmentCategory("ТГ-3", mapElectricMotor = mapTurbogenerator3)
