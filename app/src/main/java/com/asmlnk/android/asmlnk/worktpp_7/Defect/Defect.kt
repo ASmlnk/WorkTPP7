@@ -1,4 +1,4 @@
-package com.asmlnk.android.asmlnk.worktpp_7
+package com.asmlnk.android.asmlnk.worktpp_7.Defect
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -1,13 +1,20 @@
-package com.asmlnk.android.asmlnk.worktpp_7
+package com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork
 
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.app.AlertDialog
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.graphics.red
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.asmlnk.android.asmlnk.worktpp_7.R
 
 class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.EquipmentCategory>)
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -49,7 +56,7 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
 
     override fun getItemCount() = list.size
 
-    inner class EquipmentHolderBoiler(view: View) : RecyclerView.ViewHolder(view) {
+    inner class EquipmentHolderBoiler(view: View) : RecyclerView.ViewHolder(view), View.OnLongClickListener {
 
         val checkBox1: CheckBox = itemView.findViewById(R.id.electric_motor_1)
         val checkBox2: CheckBox = itemView.findViewById(R.id.electric_motor_2)
@@ -60,6 +67,10 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
         val checkBox7: CheckBox = itemView.findViewById(R.id.electric_motor_7)
         val collectedAll: TextView = itemView.findViewById(R.id.electric_motor_collected_all)
         val dismantledAll: TextView = itemView.findViewById(R.id.electric_motor_dismantled_all)
+
+        init {
+            checkBox1.setOnLongClickListener(this)
+        }
 
         fun bind(listElectricMotor: List<ElectricMotor>) {
 
@@ -80,6 +91,9 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
             checkBox(checkBox6, 5)
             checkBox(checkBox7, 6)
 
+
+
+
             val listCheckBox = listOf(checkBox1,checkBox2,checkBox3,checkBox4,checkBox5,checkBox6,checkBox7)
 
             collectedAll.setOnClickListener {
@@ -89,6 +103,15 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
             dismantledAll.setOnClickListener {
                 listCheckBox.forEach { it.isChecked = false }
             }
+        }
+
+
+        override fun onLongClick(v: View?): Boolean {
+            val myDialog = AlertDialog.Builder(itemView.context)
+            myDialog
+                .setMessage("P=35fh\nS=sjd\njsdhfh").create().show()
+
+            return true
         }
     }
 

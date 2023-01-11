@@ -1,8 +1,9 @@
-package com.asmlnk.android.asmlnk.worktpp_7
+package com.asmlnk.android.asmlnk.worktpp_7.Defect
 
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.room.Room
+import com.asmlnk.android.asmlnk.worktpp_7.Defect.Defect
 import com.asmlnk.android.asmlnk.worktpp_7.database.DefectDatabase
 import java.io.File
 import java.lang.IllegalStateException

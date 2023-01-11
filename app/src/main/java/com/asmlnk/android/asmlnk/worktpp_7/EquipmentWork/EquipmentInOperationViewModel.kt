@@ -1,4 +1,4 @@
-package com.asmlnk.android.asmlnk.worktpp_7
+package com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork
 
 import androidx.lifecycle.ViewModel
 
@@ -46,6 +46,8 @@ class EquipmentInOperationViewModel: ViewModel() {
     val dv9b2 = ElectricMotor("ДВ-9Б IIск")
     val vgdn9 = ElectricMotor("ВГДН-9")
     val listBoilerUnit9 = listOf(d9a, d9b, dv9a1, dv9a2, dv9b1, dv9b2, vgdn9)
+
+    val mapBoilerUnit = listOf(listBoilerUnit6,listBoilerUnit7,  listBoilerUnit8,  listBoilerUnit9)
 
     val boilerUnit1 = EquipmentCategory("К/А-1", listBoilerUnit1)
     val boilerUnit6 = EquipmentCategory("К/А-6", listBoilerUnit6)

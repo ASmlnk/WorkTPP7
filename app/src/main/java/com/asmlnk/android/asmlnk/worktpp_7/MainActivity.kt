@@ -3,6 +3,9 @@ package com.asmlnk.android.asmlnk.worktpp_7
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
+import com.asmlnk.android.asmlnk.worktpp_7.Defect.DefectFragment
+import com.asmlnk.android.asmlnk.worktpp_7.Defect.DefectListFragment
+import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.EquipmentInOperationListFragment
 import java.util.*
 
 class MainActivity :

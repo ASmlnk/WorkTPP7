@@ -1,6 +1,8 @@
 package com.asmlnk.android.asmlnk.worktpp_7
 
 import androidx.lifecycle.ViewModel
+import com.asmlnk.android.asmlnk.worktpp_7.Defect.Defect
+import com.asmlnk.android.asmlnk.worktpp_7.Defect.DefectRepository
 
 class DefectListViewModel: ViewModel() {
 

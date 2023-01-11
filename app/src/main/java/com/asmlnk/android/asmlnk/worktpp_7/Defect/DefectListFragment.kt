@@ -1,16 +1,17 @@
-package com.asmlnk.android.asmlnk.worktpp_7
+package com.asmlnk.android.asmlnk.worktpp_7.Defect
 
 import android.content.Context
 import android.os.Bundle
 import android.view.*
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.asmlnk.android.asmlnk.worktpp_7.DefectListViewModel
+import com.asmlnk.android.asmlnk.worktpp_7.R
 import java.util.*
 
 class DefectListFragment: Fragment() {

@@ -1,4 +1,4 @@
-package com.asmlnk.android.asmlnk.worktpp_7
+package com.asmlnk.android.asmlnk.worktpp_7.Defect
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

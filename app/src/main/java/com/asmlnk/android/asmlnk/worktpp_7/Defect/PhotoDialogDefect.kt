@@ -1,4 +1,4 @@
-package com.asmlnk.android.asmlnk.worktpp_7
+package com.asmlnk.android.asmlnk.worktpp_7.Defect
 
 import android.app.Dialog
 import android.graphics.Bitmap
@@ -10,6 +10,7 @@ import android.view.Window
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
+import com.asmlnk.android.asmlnk.worktpp_7.R
 import java.io.File
 
 private const val ARG_PHOTO = "photo"
