@@ -68,17 +68,6 @@ class EquipmentInOperationViewModel: ViewModel() {
     val knb2a = ElectricMotor("КНБ-2А")
     val knb2b = ElectricMotor("КНБ-2Б")
 
-    val mapTurbogenerator1 = mapOf(
-        "ГОН-А" to gon1a,
-        "ГОН-Б" to gon1b,
-        "МНС=" to mnsPost1,
-        "МНС" to mns1,
-        "МНУ=" to mnuPost1,
-        "МНУ-А" to mnu1,
-        "ВПУ" to vpu1,
-        "ПМН" to pmn1,
-        "КНБ-А" to knb2a,
-        "КНБ-Б" to knb2b)
 
     val gon3a = ElectricMotor("ГОН-3А")
     val gon3b = ElectricMotor("ГОН-3Б")
@@ -95,20 +84,7 @@ class EquipmentInOperationViewModel: ViewModel() {
     val kn3b = ElectricMotor("КН-3Б")
 
 
-    val mapTurbogenerator3 = mapOf(
-        "ГОН-А" to gon3a,
-        "ГОН-Б" to gon3b,
-        "МНС=" to mnsPost3,
-        "МНС" to mns3,
-        "МНУ=" to mnuPost3,
-        "МНУ-А" to mnu3a,
-        "МНУ-Б" to mnu3b,
-        "ВПУ" to vpu3,
-        "ПМН" to pmn3,
-        "КНБ-А" to knb3a,
-        "КНБ-Б" to knb3b,
-        "КН-А" to kn3a,
-        "КН-Б" to kn3b)
+
 
     val gon4a = ElectricMotor("ГОН-4А")
     val gon4b = ElectricMotor("ГОН-4Б")
@@ -124,22 +100,6 @@ class EquipmentInOperationViewModel: ViewModel() {
     val kn4b = ElectricMotor("КН-4Б")
     val sln4a = ElectricMotor("СлН-4А")
     val sln4b = ElectricMotor("СлН-4Б")
-
-    val mapTurbogenerator4 = mapOf(
-        "ГОН-А" to gon4a,
-        "ГОН-Б" to gon4b,
-        "МНС=" to mnsPost4,
-        "МНС" to mns4,
-        "МНУ=" to mnuPost4,
-        "МНУ-А" to mnu4a,
-        "ВПУ" to vpu4,
-        "ПМН" to pmn4,
-        "КНБ-А" to knb4a,
-        "КНБ-Б" to knb4b,
-        "КН-А" to kn4a,
-        "КН-Б" to kn4b,
-        "СлН-А" to sln4a,
-        "СлН-Б" to sln4b)
 
     val gon5a = ElectricMotor("ГОН-5А")
     val gon5b = ElectricMotor("ГОН-5Б")
@@ -159,6 +119,67 @@ class EquipmentInOperationViewModel: ViewModel() {
     val sln5a = ElectricMotor("СлН-5А")
     val sln5b = ElectricMotor("СлН-5Б")
 
+
+
+    val gon6a = ElectricMotor("ГОН-6А")
+    val gon6b = ElectricMotor("ГОН-6Б")
+    val mnsPost6 = ElectricMotor("МНС-6=")
+    val mns6 = ElectricMotor("МНС-6")
+    val mnuPost6 = ElectricMotor("МНУ-6=")
+    val mnu6a = ElectricMotor("МНУ-6А")
+    val mnu6b = ElectricMotor("МНУ-6Б")
+    val vpu6 = ElectricMotor("ВПУ-6")
+    val pmn6 = ElectricMotor("ПМН-6")
+    val ntv3 = ElectricMotor("НТВ-3")
+    val ntv4 = ElectricMotor("НТВ-4")
+
+
+
+
+
+    val mapTurbogenerator1 = mapOf(
+        "ГОН-А" to gon1a,
+        "ГОН-Б" to gon1b,
+        "МНС=" to mnsPost1,
+        "МНС" to mns1,
+        "МНУ=" to mnuPost1,
+        "МНУ-А" to mnu1,
+        "ВПУ" to vpu1,
+        "ПМН" to pmn1,
+        "КНБ-А" to knb2a,
+        "КНБ-Б" to knb2b)
+
+    val mapTurbogenerator3 = mapOf(
+        "ГОН-А" to gon3a,
+        "ГОН-Б" to gon3b,
+        "МНС=" to mnsPost3,
+        "МНС" to mns3,
+        "МНУ=" to mnuPost3,
+        "МНУ-А" to mnu3a,
+        "МНУ-Б" to mnu3b,
+        "ВПУ" to vpu3,
+        "ПМН" to pmn3,
+        "КНБ-А" to knb3a,
+        "КНБ-Б" to knb3b,
+        "КН-А" to kn3a,
+        "КН-Б" to kn3b)
+
+    val mapTurbogenerator4 = mapOf(
+        "ГОН-А" to gon4a,
+        "ГОН-Б" to gon4b,
+        "МНС=" to mnsPost4,
+        "МНС" to mns4,
+        "МНУ=" to mnuPost4,
+        "МНУ-А" to mnu4a,
+        "ВПУ" to vpu4,
+        "ПМН" to pmn4,
+        "КНБ-А" to knb4a,
+        "КНБ-Б" to knb4b,
+        "КН-А" to kn4a,
+        "КН-Б" to kn4b,
+        "СлН-А" to sln4a,
+        "СлН-Б" to sln4b)
+
     val mapTurbogenerator5 = mapOf(
         "ГОН-А" to gon5a,
         "ГОН-Б" to gon5b,
@@ -177,18 +198,6 @@ class EquipmentInOperationViewModel: ViewModel() {
         "КН-В" to kn5c,
         "СлН-А" to sln5a,
         "СлН-Б" to sln5b)
-
-    val gon6a = ElectricMotor("ГОН-6А")
-    val gon6b = ElectricMotor("ГОН-6Б")
-    val mnsPost6 = ElectricMotor("МНС-6=")
-    val mns6 = ElectricMotor("МНС-6")
-    val mnuPost6 = ElectricMotor("МНУ-6=")
-    val mnu6a = ElectricMotor("МНУ-6А")
-    val mnu6b = ElectricMotor("МНУ-6Б")
-    val vpu6 = ElectricMotor("ВПУ-6")
-    val pmn6 = ElectricMotor("ПМН-6")
-    val ntv3 = ElectricMotor("НТВ-3")
-    val ntv4 = ElectricMotor("НТВ-4")
 
     val mapTurbogenerator6 = mapOf(
         "ГОН-А" to gon6a,

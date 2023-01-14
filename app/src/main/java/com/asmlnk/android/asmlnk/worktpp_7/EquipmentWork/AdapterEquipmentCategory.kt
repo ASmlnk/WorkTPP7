@@ -14,6 +14,7 @@ import androidx.core.graphics.red
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.asmlnk.android.asmlnk.worktpp_7.Defect.KOTL
 import com.asmlnk.android.asmlnk.worktpp_7.R
 
 class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.EquipmentCategory>)

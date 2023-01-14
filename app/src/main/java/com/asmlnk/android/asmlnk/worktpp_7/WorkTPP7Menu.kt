@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.ElectricMotor
+import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.data.FirestoreElectricMotorRepository
 import java.util.*
 
 class WorkTPP7Menu: Fragment() {
@@ -19,6 +21,10 @@ class WorkTPP7Menu: Fragment() {
     private var callbacks: Callbacks? = null
     private lateinit var defects: Button
     private lateinit var equipmentAtWork: Button
+    private lateinit var buttonElectricMotor: Button
+
+    private val firebaseRepository: FirestoreElectricMotorRepository = FirestoreElectricMotorRepository()
+    private val em: ElectricMotor = ElectricMotor()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -34,6 +40,7 @@ class WorkTPP7Menu: Fragment() {
 
         defects = view.findViewById(R.id.defects) as Button
         equipmentAtWork = view.findViewById(R.id.equipment_work) as Button
+        buttonElectricMotor = view.findViewById(R.id.button_em) as Button
 
         defects.setOnClickListener {
             callbacks?.onDefectListSelected()
@@ -42,6 +49,10 @@ class WorkTPP7Menu: Fragment() {
         equipmentAtWork.setOnClickListener {
             callbacks?.onEquipmentListSelected()
         }
+
+        /*buttonElectricMotor.setOnClickListener {
+            firebaseRepository.addElectricMotor(em)
+        }*/
 
         return view
     }
