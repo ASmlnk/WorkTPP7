@@ -29,11 +29,24 @@ class EquipmentInOperationViewModel: ViewModel() {
                 listCategory.add(it.toObject<ElectricMotor>().apply { id = it.id })
             }
 
-            val listEquipmentCategory: MutableList<EquipmentCategory> = mutableListOf()
+            val ad = listCategory.filter { it.category === "К/А-6" }
+            val bd = listCategory.filter { it.category === "К/А-7" }
+            val df = listCategory.filter { it.category === "К/А-8" }
+            val fy = listCategory.filter { it.category === "К/А-9" }
 
-            listCategory.groupBy { it.category }.forEach {
+
+
+
+            val ka6 = EquipmentCategory("К/А-6", listElectricMotor = ad)
+            val ka7 = EquipmentCategory("К/А-7", listElectricMotor = bd)
+            val ka8 = EquipmentCategory("К/А-8", listElectricMotor = df)
+            val ka9 = EquipmentCategory("К/А-9", listElectricMotor = fy)
+
+            val listEquipmentCategory= listOf(ka6,ka7,ka8,ka9)
+
+           /* listCategory.groupBy { it.category }.forEach {
                 listEquipmentCategory.add(EquipmentCategory(it.key, it.value))
-            }
+            }*/
             boilerUnitLiveData.value = listEquipmentCategory
         }
     }
