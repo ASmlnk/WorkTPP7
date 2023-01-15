@@ -9,7 +9,7 @@ import com.google.firebase.ktx.Firebase
 
 class FirestoreElectricMotorRepository: IElectricMotorRepository {
 
-    private val remoteDB = Firebase.firestore
+    private val remoteDB = FirebaseFirestore.getInstance()
 
     override fun getAllCategoryElectricMotor(nameCategory: String): CollectionReference {
         return remoteDB.collection(nameCategory)

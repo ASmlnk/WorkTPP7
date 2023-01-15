@@ -34,7 +34,7 @@ class EquipmentInOperationListFragment: Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        equipmentInOperationViewModel.getEquipmentCategory(CAT_BOILER_UNIT.toString())
+        equipmentInOperationViewModel.getEquipmentCategory("Котлоагрегаты")
     }
 
     override fun onCreateView(

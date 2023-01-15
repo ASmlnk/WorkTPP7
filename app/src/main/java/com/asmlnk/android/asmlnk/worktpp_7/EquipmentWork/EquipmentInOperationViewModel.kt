@@ -23,14 +23,14 @@ class EquipmentInOperationViewModel: ViewModel() {
 
 
     fun getEquipmentCategory (nameCategory: String) {
-       /* val data = firestoreElectricMotorRepository
-            .getAllCategoryElectricMotor(nameCategory).get()*/
+        val data = firestoreElectricMotorRepository
+            .getAllCategoryElectricMotor(nameCategory).get()
 
-        val data = FirebaseFirestore.getInstance()
+        /*val data = FirebaseFirestore.getInstance()
 
-        data.collection("Котлоагрегаты").get()
+        data.collection("Котлоагрегаты").get()*/
 
-        .addOnSuccessListener { doc ->
+        data.addOnSuccessListener { doc ->
             val listCategory: List<ElectricMotor> = doc.toObjects(ElectricMotor::class.java)
 
             /*val listCategory: MutableList<ElectricMotor> = mutableListOf()
