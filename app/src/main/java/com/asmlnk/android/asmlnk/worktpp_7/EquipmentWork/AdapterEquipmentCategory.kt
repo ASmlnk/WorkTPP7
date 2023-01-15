@@ -78,8 +78,8 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
         fun bind(listElectricMotor: List<ElectricMotor>) {
 
             fun checkBox(checkBox: CheckBox, keyCheckBox: String) {
-                var electricMotorList = listElectricMotor.filter { it.keyCheckBox === keyCheckBox }
-                var electricMotor = electricMotorList[0]
+                val electricMotorList = listElectricMotor.filter { it.keyCheckBox == keyCheckBox }
+                val electricMotor = electricMotorList[0]
                 checkBox.apply {
                     setOnCheckedChangeListener { _, isChecked ->
                         electricMotor.schemaState = isChecked

@@ -4,10 +4,12 @@ import androidx.lifecycle.LiveData
 import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.ElectricMotor
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class FirestoreElectricMotorRepository: IElectricMotorRepository {
 
-    private val remoteDB = FirebaseFirestore.getInstance()
+    private val remoteDB = Firebase.firestore
 
     override fun getAllCategoryElectricMotor(nameCategory: String): CollectionReference {
         return remoteDB.collection(nameCategory)
