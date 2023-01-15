@@ -1,21 +1,23 @@
 package com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork
 
-import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.AlertDialog
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.graphics.red
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.asmlnk.android.asmlnk.worktpp_7.Defect.KOTL
+import com.asmlnk.android.asmlnk.worktpp_7.ELECTRICMOTOR
 import com.asmlnk.android.asmlnk.worktpp_7.R
+
+private val D_A = ELECTRICMOTOR.D_A
+private val D_B = ELECTRICMOTOR.D_B
+private val DV_A1 = ELECTRICMOTOR.DV_A1
+private val DV_A2 = ELECTRICMOTOR.DV_A2
+private val DV_B1 = ELECTRICMOTOR.DV_B1
+private val DV_B2= ELECTRICMOTOR.DV_B2
+private val VGDN = ELECTRICMOTOR.VGDN
 
 class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.EquipmentCategory>)
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -59,43 +61,46 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
 
     inner class EquipmentHolderBoiler(view: View) : RecyclerView.ViewHolder(view), View.OnLongClickListener {
 
-        val checkBox1: CheckBox = itemView.findViewById(R.id.electric_motor_1)
-        val checkBox2: CheckBox = itemView.findViewById(R.id.electric_motor_2)
-        val checkBox3: CheckBox = itemView.findViewById(R.id.electric_motor_3)
-        val checkBox4: CheckBox = itemView.findViewById(R.id.electric_motor_4)
-        val checkBox5: CheckBox = itemView.findViewById(R.id.electric_motor_5)
-        val checkBox6: CheckBox = itemView.findViewById(R.id.electric_motor_6)
-        val checkBox7: CheckBox = itemView.findViewById(R.id.electric_motor_7)
+        val checkBoxDa: CheckBox = itemView.findViewById(R.id.electric_motor_1)
+        val checkBoxDb: CheckBox = itemView.findViewById(R.id.electric_motor_2)
+        val checkBoxDvA1: CheckBox = itemView.findViewById(R.id.electric_motor_3)
+        val checkBoxDvA2: CheckBox = itemView.findViewById(R.id.electric_motor_4)
+        val checkBoxDvb1: CheckBox = itemView.findViewById(R.id.electric_motor_5)
+        val checkBoxDvb2: CheckBox = itemView.findViewById(R.id.electric_motor_6)
+        val checkBoxVgdn: CheckBox = itemView.findViewById(R.id.electric_motor_7)
         val collectedAll: TextView = itemView.findViewById(R.id.electric_motor_collected_all)
         val dismantledAll: TextView = itemView.findViewById(R.id.electric_motor_dismantled_all)
 
         init {
-            checkBox1.setOnLongClickListener(this)
+            checkBoxDa.setOnLongClickListener(this)
         }
 
         fun bind(listElectricMotor: List<ElectricMotor>) {
 
-            fun checkBox(checkBox: CheckBox, it: Int) {
+            fun checkBox(checkBox: CheckBox, keyCheckBox: ELECTRICMOTOR) {
+                val electricMotorList = listElectricMotor.filter { it.keyCheckBox == keyCheckBox.toString() }
+                val electricMotor = electricMotorList[0]
                 checkBox.apply {
                     setOnCheckedChangeListener { _, isChecked ->
-                        listElectricMotor[it].schemaState = isChecked
+                        electricMotor.schemaState = isChecked
                     }
-                    text = listElectricMotor[it].name
+                    text = electricMotor.name
+                    isChecked = electricMotor.schemaState
                 }
             }
 
-            checkBox(checkBox1, 0)
-            checkBox(checkBox2, 1)
-            checkBox(checkBox3, 2)
-            checkBox(checkBox4, 3)
-            checkBox(checkBox5, 4)
-            checkBox(checkBox6, 5)
-            checkBox(checkBox7, 6)
+            checkBox(checkBoxDa, D_A)
+            checkBox(checkBoxDb, D_B)
+            checkBox(checkBoxDvA1, DV_A1)
+            checkBox(checkBoxDvA2, DV_A2)
+            checkBox(checkBoxDvb1, DV_B1)
+            checkBox(checkBoxDvb2, DV_B2)
+            checkBox(checkBoxVgdn, VGDN)
 
 
 
 
-            val listCheckBox = listOf(checkBox1,checkBox2,checkBox3,checkBox4,checkBox5,checkBox6,checkBox7)
+            val listCheckBox = listOf(checkBoxDa,checkBoxDb,checkBoxDvA1,checkBoxDvA2,checkBoxDvb1,checkBoxDvb2,checkBoxVgdn)
 
             collectedAll.setOnClickListener {
                 listCheckBox.forEach { it.isChecked = true }

@@ -1,14 +1,9 @@
 package com.asmlnk.android.asmlnk.worktpp_7
 
-import android.os.Bundle
-import android.widget.CheckBox
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.MutableLiveData
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.SetOptions
 
 class Chernovik {
+
+
 
     /*class MainActivity : AppCompatActivity() {
 

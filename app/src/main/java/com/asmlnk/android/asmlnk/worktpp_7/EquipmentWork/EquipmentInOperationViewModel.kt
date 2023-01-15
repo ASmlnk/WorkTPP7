@@ -1,8 +1,45 @@
 package com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.asmlnk.android.asmlnk.worktpp_7.ELECTRICMOTOR
+import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.data.FirestoreElectricMotorRepository
+import com.google.firebase.firestore.ktx.toObject
+
+private val CAT_BOILER_UNIT = ELECTRICMOTOR.CAT_BOILER_UNIT
+private val CAT_TURBOGENERATOR = ELECTRICMOTOR.CAT_TURBOGENERATOR
+private val CAT_OTHER = ELECTRICMOTOR.CAT_OTHER
 
 class EquipmentInOperationViewModel: ViewModel() {
+
+    val firestoreElectricMotorRepository = FirestoreElectricMotorRepository()
+
+     val boilerUnitLiveData = MutableLiveData<List<EquipmentCategory>>()
+    private val turbogeneratorLiveData = MutableLiveData<List<EquipmentCategory>>()
+    private val otherLiveData = MutableLiveData<List<EquipmentCategory>>()
+
+
+    fun getEquipmentCategory (nameCategory: String) {
+        val data = firestoreElectricMotorRepository
+            .getAllCategoryElectricMotor(nameCategory).get()
+
+        data.addOnSuccessListener { doc ->
+            val listCategory: MutableList<ElectricMotor> = mutableListOf()
+            for (it in doc) {
+                listCategory.add(it.toObject<ElectricMotor>().apply { id = it.id })
+            }
+
+            val listEquipmentCategory: MutableList<EquipmentCategory> = mutableListOf()
+
+            listCategory.groupBy { it.category }.forEach {
+                listEquipmentCategory.add(EquipmentCategory(it.key, it.value))
+            }
+            boilerUnitLiveData.value = listEquipmentCategory
+        }
+    }
+
+
+
 
     val d1a = ElectricMotor("Д-1А")
     val d1b = ElectricMotor("Д-1Б")
@@ -219,6 +256,8 @@ class EquipmentInOperationViewModel: ViewModel() {
     val turbogenerator6 = EquipmentCategory("ТГ-6", mapElectricMotor = mapTurbogenerator6)
 
     val listTurbogenerator = listOf(turbogenerator1,turbogenerator3,turbogenerator4,turbogenerator5,turbogenerator6)
+
+
 
 
 

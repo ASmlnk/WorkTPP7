@@ -7,21 +7,34 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
+import com.asmlnk.android.asmlnk.worktpp_7.ELECTRICMOTOR
 import com.asmlnk.android.asmlnk.worktpp_7.R
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
+
+private val CAT_TURBOGENERATOR = ELECTRICMOTOR.CAT_TURBOGENERATOR
+private val CAT_OTHER = ELECTRICMOTOR.CAT_OTHER
+
 class EquipmentInOperationListFragment: Fragment() {
 
+    val CAT_BOILER_UNIT = ELECTRICMOTOR.CAT_BOILER_UNIT
     private lateinit var viewPagerBoilerUnit: ViewPager2
     private lateinit var viewPagerTurbogenerator: ViewPager2
     private lateinit var tabLayoutTurbogenerator: TabLayout
     private lateinit var tabLayoutBoilerUnit: TabLayout
-    private var adapterBoiler: AdapterEquipmentCategory? = null
+    var listEM: List<ElectricMotor> = emptyList()
+    private var adapterBoiler: AdapterEquipmentCategory = AdapterEquipmentCategory(emptyList())
     private var adapterTurbogenerator: AdapterEquipmentCategory? = null
+
 
     private val equipmentInOperationViewModel: EquipmentInOperationViewModel by lazy {
         ViewModelProvider (this) [EquipmentInOperationViewModel :: class.java]
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        equipmentInOperationViewModel.getEquipmentCategory(CAT_BOILER_UNIT.toString())
     }
 
     override fun onCreateView(
@@ -36,6 +49,8 @@ class EquipmentInOperationListFragment: Fragment() {
         viewPagerTurbogenerator = view.findViewById(R.id.pager_turbogenerator) as ViewPager2
         tabLayoutTurbogenerator = view.findViewById(R.id.tab_layout_turbogenerator) as TabLayout
 
+        viewPagerBoilerUnit.adapter = adapterBoiler
+
 
 
         return view
@@ -44,14 +59,25 @@ class EquipmentInOperationListFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val listBoilerUnit = equipmentInOperationViewModel.listBoilerUnit
+        equipmentInOperationViewModel.boilerUnitLiveData.observe(viewLifecycleOwner) {
+            adapterBoiler = AdapterEquipmentCategory(it)
+            viewPagerBoilerUnit.adapter = adapterBoiler
+           /* TabLayoutMediator(tabLayoutBoilerUnit, viewPagerBoilerUnit) { tab, position ->
+                tab.text = it[position].name
+            }.attach()*/
+        }
+
+        //val listBoilerUnit = equipmentInOperationViewModel.listBoilerUnit
+
+
+
         val listTurbogenerator = equipmentInOperationViewModel.listTurbogenerator
 
-        adapterBoiler = AdapterEquipmentCategory(listBoilerUnit)
-        viewPagerBoilerUnit.adapter = adapterBoiler
-        TabLayoutMediator(tabLayoutBoilerUnit, viewPagerBoilerUnit) { tab, position ->
+       // adapterBoiler = AdapterEquipmentCategory(listBoilerUnit)
+      //  viewPagerBoilerUnit.adapter = adapterBoiler
+        /*TabLayoutMediator(tabLayoutBoilerUnit, viewPagerBoilerUnit) { tab, position ->
             tab.text = listBoilerUnit[position].name
-        }.attach()
+        }.attach()*/
 
         adapterTurbogenerator = AdapterEquipmentCategory(listTurbogenerator)
         viewPagerTurbogenerator.adapter = adapterTurbogenerator
@@ -61,6 +87,8 @@ class EquipmentInOperationListFragment: Fragment() {
 
 
     }
+
+
 
     companion object {
         fun newInstance(): EquipmentInOperationListFragment {
