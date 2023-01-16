@@ -9,15 +9,8 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.asmlnk.android.asmlnk.worktpp_7.ELECTRICMOTOR
+import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.data.FirestoreElectricMotorRepository
 import com.asmlnk.android.asmlnk.worktpp_7.R
-
-private val D_A = ELECTRICMOTOR.D_A
-private val D_B = ELECTRICMOTOR.D_B
-private val DV_A1 = ELECTRICMOTOR.DV_A1
-private val DV_A2 = ELECTRICMOTOR.DV_A2
-private val DV_B1 = ELECTRICMOTOR.DV_B1
-private val DV_B2= ELECTRICMOTOR.DV_B2
-private val VGDN = ELECTRICMOTOR.VGDN
 
 class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.EquipmentCategory>)
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -71,36 +64,50 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
         val collectedAll: TextView = itemView.findViewById(R.id.electric_motor_collected_all)
         val dismantledAll: TextView = itemView.findViewById(R.id.electric_motor_dismantled_all)
 
+        val listCheckBox = listOf(checkBoxDa,checkBoxDb,checkBoxDvA1,checkBoxDvA2,checkBoxDvb1,checkBoxDvb2,checkBoxVgdn)
+
         init {
-            checkBoxDa.setOnLongClickListener(this)
+            listCheckBox.forEach { it.setOnLongClickListener(this) }
+
         }
 
         fun bind(listElectricMotor: List<ElectricMotor>) {
 
             fun checkBox(checkBox: CheckBox, keyCheckBox: String) {
-                val electricMotorList = listElectricMotor.filter { it.keyCheckBox == keyCheckBox }
-                val electricMotor = electricMotorList[0]
+                val electricMotor = listElectricMotor.filter { it.keyCheckBox == keyCheckBox }.first()
                 checkBox.apply {
+
                     setOnCheckedChangeListener { _, isChecked ->
-                        electricMotor.schemaState = isChecked
+                        FirestoreElectricMotorRepository()
+                            .addSchemaState(
+                                electricMotor,
+                                ELECTRICMOTOR.CAT_BOILER_UNIT.кеуElectricMotor,
+                                isChecked)
                     }
+
+                    setOnLongClickListener {_ ->
+                        val myDialog = AlertDialog.Builder(itemView.context)
+                        myDialog
+                            .setMessage(electricMotor.characteristics).create().show()
+                         return@setOnLongClickListener true
+                    }
+
                     text = electricMotor.name
                     isChecked = electricMotor.schemaState
                 }
+
             }
 
-            checkBox(checkBoxDa, "Д-А")
-            checkBox(checkBoxDb, "Д-Б")
-            checkBox(checkBoxDvA1, "ДВ-А1")
-            checkBox(checkBoxDvA2, "ДВ-А2")
-            checkBox(checkBoxDvb1, "ДВ-Б1")
-            checkBox(checkBoxDvb2, "ДВ-Б2")
-            checkBox(checkBoxVgdn, "ВГДН")
+            checkBox(checkBoxDa, ELECTRICMOTOR.D_A.кеуElectricMotor)
+            checkBox(checkBoxDb, ELECTRICMOTOR.D_B.кеуElectricMotor)
+            checkBox(checkBoxDvA1, ELECTRICMOTOR.DV_A1.кеуElectricMotor)
+            checkBox(checkBoxDvA2, ELECTRICMOTOR.DV_A2.кеуElectricMotor)
+            checkBox(checkBoxDvb1, ELECTRICMOTOR.DV_B1.кеуElectricMotor)
+            checkBox(checkBoxDvb2, ELECTRICMOTOR.DV_B2.кеуElectricMotor)
+            checkBox(checkBoxVgdn, ELECTRICMOTOR.VGDN.кеуElectricMotor)
 
 
 
-
-            val listCheckBox = listOf(checkBoxDa,checkBoxDb,checkBoxDvA1,checkBoxDvA2,checkBoxDvb1,checkBoxDvb2,checkBoxVgdn)
 
             collectedAll.setOnClickListener {
                 listCheckBox.forEach { it.isChecked = true }
@@ -112,10 +119,12 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
         }
 
 
+
+
         override fun onLongClick(v: View?): Boolean {
-            val myDialog = AlertDialog.Builder(itemView.context)
+            /*val myDialog = AlertDialog.Builder(itemView.context)
             myDialog
-                .setMessage("P=35fh\nS=sjd\njsdhfh").create().show()
+                .setMessage("P=35fh\nS=sjd\njsdhfh").create().show()*/
 
             return true
         }

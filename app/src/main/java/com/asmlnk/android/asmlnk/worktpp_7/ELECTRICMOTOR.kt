@@ -1,6 +1,6 @@
 package com.asmlnk.android.asmlnk.worktpp_7
 
-enum class ELECTRICMOTOR(кеуElectricMotor: String) {
+enum class ELECTRICMOTOR(val кеуElectricMotor: String) {
     CAT_BOILER_UNIT("Котлоагрегаты"),
     CAT_TURBOGENERATOR("Турбогенераторы"),
     CAT_OTHER("Остальное"),

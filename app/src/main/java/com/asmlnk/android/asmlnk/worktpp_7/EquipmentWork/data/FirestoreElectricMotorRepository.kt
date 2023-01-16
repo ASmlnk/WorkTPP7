@@ -4,12 +4,13 @@ import androidx.lifecycle.LiveData
 import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.ElectricMotor
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class FirestoreElectricMotorRepository: IElectricMotorRepository {
 
-    private val remoteDB = FirebaseFirestore.getInstance()
+    val remoteDB = FirebaseFirestore.getInstance()
 
     override fun getAllCategoryElectricMotor(nameCategory: String): CollectionReference {
         return remoteDB.collection(nameCategory)
@@ -26,4 +27,12 @@ class FirestoreElectricMotorRepository: IElectricMotorRepository {
         remoteDB.collection("")
             .add(electricMotorData)
     }
+
+    override fun addSchemaState(electricMotor: ElectricMotor, nameCategory: String, isChecked:Boolean) {
+        val data = HashMap<String, Any>()
+        data["schemaState"] = isChecked
+        remoteDB.collection(nameCategory).document(electricMotor.id)
+            .set(data, SetOptions.merge())
+    }
+
 }

@@ -5,13 +5,10 @@ import androidx.lifecycle.ViewModel
 import com.asmlnk.android.asmlnk.worktpp_7.ELECTRICMOTOR
 import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.data.FirestoreElectricMotorRepository
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-
-private val CAT_BOILER_UNIT = ELECTRICMOTOR.CAT_BOILER_UNIT
-private val CAT_TURBOGENERATOR = ELECTRICMOTOR.CAT_TURBOGENERATOR
-private val CAT_OTHER = ELECTRICMOTOR.CAT_OTHER
 
 class EquipmentInOperationViewModel: ViewModel() {
 
@@ -26,38 +23,29 @@ class EquipmentInOperationViewModel: ViewModel() {
         val data = firestoreElectricMotorRepository
             .getAllCategoryElectricMotor(nameCategory).get()
 
-        /*val data = FirebaseFirestore.getInstance()
-
-        data.collection("Котлоагрегаты").get()*/
-
         data.addOnSuccessListener { doc ->
-            val listCategory: List<ElectricMotor> = doc.toObjects(ElectricMotor::class.java)
+           // val listCategory: List<ElectricMotor> = doc.toObjects(ElectricMotor::class.java)
 
-            /*val listCategory: MutableList<ElectricMotor> = mutableListOf()
+            val listCategory: MutableList<ElectricMotor> = mutableListOf()
             for (it in doc) {
                 listCategory.add(it.toObject<ElectricMotor>().apply { id = it.id })
-            }*/
+            }
 
-            val ad = listCategory.filter { it.category == "К/А-6" }
-            val bd = listCategory.filter { it.category == "К/А-7" }
-            val df = listCategory.filter { it.category == "К/А-8" }
-            val fy = listCategory.filter { it.category == "К/А-9" }
-
-
-
-
-            val ka6 = EquipmentCategory("К/А-6", listElectricMotor = ad)
-            val ka7 = EquipmentCategory("К/А-7", listElectricMotor = bd)
-            val ka8 = EquipmentCategory("К/А-8", listElectricMotor = df)
-            val ka9 = EquipmentCategory("К/А-9", listElectricMotor = fy)
-
-            val listEquipmentCategory= listOf(ka6,ka7,ka8,ka9)
-
-           /* listCategory.groupBy { it.category }.forEach {
+            val listEquipmentCategory: MutableList<EquipmentCategory> = mutableListOf()
+            listCategory.groupBy { it.category }.forEach {
                 listEquipmentCategory.add(EquipmentCategory(it.key, it.value))
-            }*/
+            }
+            listEquipmentCategory.sortBy { it.name }
+
             boilerUnitLiveData.value = listEquipmentCategory
         }
+    }
+
+    fun addSchemaState(electricMotor: ElectricMotor, nameCategory: String, isChecked:Boolean) {
+        val data = HashMap<String, Any>()
+        data["shema"] = isChecked
+        firestoreElectricMotorRepository.remoteDB.collection(nameCategory).document(electricMotor.id)
+            .set(data, SetOptions.merge())
     }
 
 

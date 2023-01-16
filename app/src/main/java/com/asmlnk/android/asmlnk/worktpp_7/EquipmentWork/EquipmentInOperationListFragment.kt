@@ -12,10 +12,6 @@ import com.asmlnk.android.asmlnk.worktpp_7.R
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-
-private val CAT_TURBOGENERATOR = ELECTRICMOTOR.CAT_TURBOGENERATOR
-private val CAT_OTHER = ELECTRICMOTOR.CAT_OTHER
-
 class EquipmentInOperationListFragment: Fragment() {
 
     val CAT_BOILER_UNIT = ELECTRICMOTOR.CAT_BOILER_UNIT
@@ -34,7 +30,7 @@ class EquipmentInOperationListFragment: Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        equipmentInOperationViewModel.getEquipmentCategory("Котлоагрегаты")
+        equipmentInOperationViewModel.getEquipmentCategory(ELECTRICMOTOR.CAT_BOILER_UNIT.кеуElectricMotor)
     }
 
     override fun onCreateView(
