@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.asmlnk.android.asmlnk.worktpp_7.EM
 import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.data.FirestoreElectricMotorRepository
@@ -47,7 +48,6 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
         val listEquipment = list[position].listElectricMotor
-        val listEquipmentTurbogenerator = list[position].listElectricMotor
 
         when (holder) {
             is EquipmentHolderBoiler -> {
@@ -187,8 +187,7 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
                                 .addSchemaState(
                                     electricMotor,
                                     EM.CAT_TURBOGENERATOR.кеуElectricMotor,
-                                    isChecked
-                                )
+                                    isChecked)
                         }
 
                         setOnLongClickListener { _ ->
@@ -205,7 +204,6 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
                     }
                 }
             }
-
             checkBox(checkBoxGonA, EM.GON_A.кеуElectricMotor)
             checkBox(checkBoxGonB, EM.GON_B.кеуElectricMotor)
             checkBox(checkBoxPmn, EM.PMN.кеуElectricMotor)
@@ -282,8 +280,7 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
                 checkBoxR3S4,
                 checkBoxR3S5,
                 checkBoxR3S6,
-                checkBoxR3S7
-                )
+                checkBoxR3S7)
 
             fun checkBox(checkBox: CheckBox, keyCheckBox: String) {
                 val list = listElectricMotor.filter { it.keyCheckBox == keyCheckBox }
@@ -299,8 +296,7 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
                                 .addSchemaState(
                                     electricMotor,
                                     EM.CAT_OTHER.кеуElectricMotor,
-                                    isChecked
-                                )
+                                    isChecked)
                         }
 
                         setOnLongClickListener { _ ->
@@ -317,7 +313,6 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
                     }
                 }
             }
-
             checkBox (checkBoxR1S1, EM.R1_S1.кеуElectricMotor)
             checkBox (checkBoxR1S2, EM.R1_S2.кеуElectricMotor)
             checkBox (checkBoxR1S3, EM.R1_S3.кеуElectricMotor)
@@ -340,7 +335,6 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
             checkBox (checkBoxR3S6, EM.R3_S6.кеуElectricMotor)
             checkBox (checkBoxR3S7, EM.R3_S7.кеуElectricMotor)
 
-
             collectedAll.setOnClickListener {
                 listCheckBox.forEach { it.isChecked = true }
             }
@@ -348,9 +342,6 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
                 listCheckBox.forEach { it.isChecked = false }
             }
         }
-
-
-
     }
 }
 

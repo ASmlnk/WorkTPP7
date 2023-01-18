@@ -15,7 +15,6 @@ class EquipmentInOperationViewModel: ViewModel() {
     val turbogeneratorLiveData = MutableLiveData<List<EquipmentCategory>>()
     val otherLiveData = MutableLiveData<List<EquipmentCategory>>()
 
-
     fun getEquipmentCategory (nameCategory: String) {
         val data = firestoreElectricMotorRepository
             .getAllCategoryElectricMotor(nameCategory).get()

@@ -14,7 +14,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class EquipmentInOperationListFragment: Fragment() {
 
-
     private lateinit var viewPagerBoilerUnit: ViewPager2
     private lateinit var viewPagerTurbogenerator: ViewPager2
     private lateinit var tabLayoutTurbogenerator: TabLayout
@@ -25,7 +24,6 @@ class EquipmentInOperationListFragment: Fragment() {
     private var adapterBoiler: AdapterEquipmentCategory = AdapterEquipmentCategory(emptyList())
     private var adapterTurbogenerator: AdapterEquipmentCategory = AdapterEquipmentCategory(emptyList())
     private var adapterOther: AdapterEquipmentCategory = AdapterEquipmentCategory(emptyList())
-
 
     private val equipmentInOperationViewModel: EquipmentInOperationViewModel by lazy {
         ViewModelProvider (this) [EquipmentInOperationViewModel :: class.java]
@@ -46,7 +44,6 @@ class EquipmentInOperationListFragment: Fragment() {
         tabLayoutOther = view.findViewById(R.id.tab_layout_other) as TabLayout
 
         viewPagerBoilerUnit.adapter = adapterBoiler
-
         return view
     }
 
@@ -56,7 +53,6 @@ class EquipmentInOperationListFragment: Fragment() {
         equipmentInOperationViewModel.getEquipmentCategory(EM.CAT_OTHER.кеуElectricMotor)
         equipmentInOperationViewModel.getEquipmentCategory(EM.CAT_BOILER_UNIT.кеуElectricMotor)
         equipmentInOperationViewModel.getEquipmentCategory(EM.CAT_TURBOGENERATOR.кеуElectricMotor)
-
 
         equipmentInOperationViewModel.boilerUnitLiveData.observe(viewLifecycleOwner) {
             adapterBoiler = AdapterEquipmentCategory(it)
@@ -83,8 +79,6 @@ class EquipmentInOperationListFragment: Fragment() {
             }.attach()
         }
 
-
-
       /*  val listTurbogenerator = equipmentInOperationViewModel.listTurbogenerator
 
        // adapterBoiler = AdapterEquipmentCategory(listBoilerUnit)
@@ -98,7 +92,6 @@ class EquipmentInOperationListFragment: Fragment() {
         TabLayoutMediator(tabLayoutTurbogenerator, viewPagerTurbogenerator) { tab, position ->
             tab.text = listTurbogenerator[position].name
         }.attach()*/
-
     }
 
     companion object {
@@ -106,6 +99,4 @@ class EquipmentInOperationListFragment: Fragment() {
             return EquipmentInOperationListFragment()
         }
     }
-
-
 }

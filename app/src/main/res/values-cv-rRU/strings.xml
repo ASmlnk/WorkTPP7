@@ -13,4 +13,9 @@
     <string name="other_equipment">Остальное</string>
     <string name="collected_all">Cобран</string>
     <string name="dismantled_all">Разобран</string>
+    <string name="working_shift">Смена</string>
+    <string name="laser">Лизерная</string>
+    <string name="hydrogen">Водород</string>
+    <string name="nitrogen">Азот</string>
+    <string name="compressor">Компрессорная</string>
 </resources>

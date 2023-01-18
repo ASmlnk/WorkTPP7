@@ -12,4 +12,9 @@
     <string name="other_equipment">Other Equipment</string>
     <string name="collected_all">Collected All</string>
     <string name="dismantled_all">Dismantled All</string>
+    <string name="working_shift">Working Shift</string>
+    <string name="laser">Laser</string>
+    <string name="hydrogen">Hydrogen</string>
+    <string name="nitrogen">Nitrogen</string>
+    <string name="compressor">Compressor</string>
 </resources>
