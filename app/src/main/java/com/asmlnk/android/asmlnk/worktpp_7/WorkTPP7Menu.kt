@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.ElectricMotor
 import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.data.FirestoreElectricMotorRepository
@@ -50,9 +51,10 @@ class WorkTPP7Menu: Fragment() {
             callbacks?.onEquipmentListSelected()
         }
 
-        /*buttonElectricMotor.setOnClickListener {
+        buttonElectricMotor.setOnClickListener {
             firebaseRepository.addElectricMotor(em)
-        }*/
+        }
+        buttonElectricMotor.isVisible = false
 
         return view
     }

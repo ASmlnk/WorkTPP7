@@ -24,7 +24,7 @@ class FirestoreElectricMotorRepository: IElectricMotorRepository {
         electricMotorData["name"] = electricMotor.name
         electricMotorData["schemaState"] = electricMotor.schemaState
 
-        remoteDB.collection("")
+        remoteDB.collection("Остальное")
             .add(electricMotorData)
     }
 
