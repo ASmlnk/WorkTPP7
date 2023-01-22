@@ -6,12 +6,15 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.asmlnk.android.asmlnk.worktpp_7.Defect.DefectFragment
 import com.asmlnk.android.asmlnk.worktpp_7.Defect.DefectListFragment
 import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.EquipmentInOperationListFragment
+import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftCompressorFragment
+import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftFragment
 import java.util.*
 
 class MainActivity :
     AppCompatActivity(),
     DefectListFragment.Callbacks,
-    WorkTPP7Menu.Callbacks {
+    WorkTPP7Menu.Callbacks,
+    WorkingShiftFragment.Callbacks{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +52,24 @@ class MainActivity :
 
     override fun onEquipmentListSelected() {
         val fragment = EquipmentInOperationListFragment.newInstance()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onWorkingShift() {
+        val fragment = WorkingShiftFragment.newInstance()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onCompressorSelected() {
+        val fragment = WorkingShiftCompressorFragment.newInstance()
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, fragment)

@@ -17,12 +17,14 @@ class WorkTPP7Menu: Fragment() {
     interface Callbacks {
         fun onDefectListSelected()
         fun onEquipmentListSelected()
+        fun onWorkingShift()
     }
 
     private var callbacks: Callbacks? = null
     private lateinit var defects: Button
     private lateinit var equipmentAtWork: Button
     private lateinit var buttonElectricMotor: Button
+    private lateinit var buttonWorkingShift: Button
 
     private val firebaseRepository: FirestoreElectricMotorRepository = FirestoreElectricMotorRepository()
     private val em: ElectricMotor = ElectricMotor()
@@ -42,6 +44,7 @@ class WorkTPP7Menu: Fragment() {
         defects = view.findViewById(R.id.defects) as Button
         equipmentAtWork = view.findViewById(R.id.equipment_work) as Button
         buttonElectricMotor = view.findViewById(R.id.button_em) as Button
+        buttonWorkingShift = view.findViewById(R.id.working_shift) as Button
 
         defects.setOnClickListener {
             callbacks?.onDefectListSelected()
@@ -49,6 +52,10 @@ class WorkTPP7Menu: Fragment() {
 
         equipmentAtWork.setOnClickListener {
             callbacks?.onEquipmentListSelected()
+        }
+
+        buttonWorkingShift.setOnClickListener {
+            callbacks?.onWorkingShift()
         }
 
         buttonElectricMotor.setOnClickListener {

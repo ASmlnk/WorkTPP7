@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/vk_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:ems="5"
+        android:hint="@string/vk6"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/vk_4"
+        app:layout_constraintStart_toStartOf="@+id/vk_4"
+        app:layout_constraintTop_toBottomOf="@+id/vk_4" />
+
+    <EditText
+        android:id="@+id/vk_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="20dp"
+        android:ems="5"
+        android:hint="@string/vk5"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_vk5"
+        app:layout_constraintTop_toBottomOf="@+id/vk_2" />
+
+    <EditText
+        android:id="@+id/vk_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="20dp"
+        android:ems="5"
+        android:hint="@string/vk4"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/text_vk5"
+        app:layout_constraintStart_toEndOf="@+id/text_vk4"
+        app:layout_constraintTop_toBottomOf="@+id/vk_1" />
+
+    <EditText
+        android:id="@+id/vk_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="30dp"
+        android:ems="5"
+        android:hint="@string/vk2"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_vk2"
+        app:layout_constraintTop_toBottomOf="@+id/text_title" />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/compressor"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/vk_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="30dp"
+        android:ems="5"
+        android:hint="@string/vk1"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/text_vk2"
+        app:layout_constraintStart_toEndOf="@+id/text_vk1"
+        app:layout_constraintTop_toBottomOf="@+id/text_title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_compressor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_save" />
+
+    <TextView
+        android:id="@+id/text_vk1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="2dp"
+        android:text="@string/vk1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/vk_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title" />
+
+    <TextView
+        android:id="@+id/text_vk2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:text="@string/vk2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_vk1"
+        app:layout_constraintEnd_toStartOf="@+id/vk_2"
+        app:layout_constraintStart_toEndOf="@+id/vk_1"
+        app:layout_constraintTop_toTopOf="@+id/text_vk1" />
+
+    <TextView
+        android:id="@+id/text_vk4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="2dp"
+        android:text="@string/vk4"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/vk_4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_vk1" />
+
+    <TextView
+        android:id="@+id/text_vk5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="2dp"
+        android:text="@string/vk5"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/vk_5"
+        app:layout_constraintStart_toEndOf="@+id/vk_4"
+        app:layout_constraintTop_toBottomOf="@+id/text_vk2" />
+
+    <TextView
+        android:id="@+id/text_vk6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/vk6"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/text_vk4"
+        app:layout_constraintStart_toStartOf="@+id/text_vk4"
+        app:layout_constraintTop_toBottomOf="@+id/text_vk4" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        app:layout_constraintStart_toStartOf="@+id/vk_5"
+        app:layout_constraintTop_toTopOf="@+id/vk_6" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

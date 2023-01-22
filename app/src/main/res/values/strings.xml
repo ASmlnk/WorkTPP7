@@ -17,4 +17,10 @@
     <string name="hydrogen">Hydrogen</string>
     <string name="nitrogen">Nitrogen</string>
     <string name="compressor">Compressor</string>
+    <string name="vk1">VK-1</string>
+    <string name="vk2">VK-2</string>
+    <string name="vk4">VK-4</string>
+    <string name="vk5">VK-5</string>
+    <string name="vk6">VK-6</string>
+    <string name="save">Save</string>
 </resources>
