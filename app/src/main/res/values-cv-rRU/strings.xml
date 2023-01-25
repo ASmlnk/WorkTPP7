@@ -20,8 +20,8 @@
     <string name="compressor">Компрессорная</string>
     <string name="vk1">ВК-1</string>
     <string name="vk2">ВК-2</string>
-    <string name="vk5">ВК-4</string>
-    <string name="vk6">ВК-5</string>
-    <string name="vk4">ВК-6</string>
+    <string name="vk5">ВК-5</string>
+    <string name="vk6">ВК-6</string>
+    <string name="vk4">ВК-4</string>
     <string name="save">Сохранить</string>
 </resources>
