@@ -24,4 +24,12 @@
     <string name="vk6">ВК-6</string>
     <string name="vk4">ВК-4</string>
     <string name="save">Сохранить</string>
+    <string name="control_measurement">Контрольный замер</string>
+    <string name="result">Результат</string>
+    <string name="pn">Pн</string>
+    <string name="pk">Pк</string>
+    <string name="ata">ата</string>
+    <string name="tn">tн</string>
+    <string name="tk">tк</string>
+    <string name="degree">°C</string>
 </resources>
