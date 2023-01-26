@@ -13,9 +13,11 @@ class WorkingShiftFragment: Fragment() {
 
     interface Callbacks {
         fun onCompressorSelected()
+        fun onControlMeasurementSelected()
     }
 
     private lateinit var buttonCompressor: Button
+    private lateinit var buttonControlMeasurement: Button
     private var callbacks: WorkingShiftFragment.Callbacks? = null
 
     override fun onAttach(context: Context) {
@@ -31,6 +33,8 @@ class WorkingShiftFragment: Fragment() {
         val view = inflater.inflate(R.layout.working_shift_fragment, container, false)
 
         buttonCompressor = view.findViewById(R.id.button_compressor) as Button
+        buttonControlMeasurement = view.findViewById(R.id.control_measurement) as Button
+
         return view
     }
 
@@ -39,6 +43,10 @@ class WorkingShiftFragment: Fragment() {
 
         buttonCompressor.setOnClickListener {
             callbacks?.onCompressorSelected()
+        }
+
+        buttonControlMeasurement.setOnClickListener {
+            callbacks?.onControlMeasurementSelected()
         }
 
     }

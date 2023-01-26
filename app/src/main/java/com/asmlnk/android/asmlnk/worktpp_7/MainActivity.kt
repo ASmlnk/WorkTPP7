@@ -7,6 +7,7 @@ import com.asmlnk.android.asmlnk.worktpp_7.Defect.DefectFragment
 import com.asmlnk.android.asmlnk.worktpp_7.Defect.DefectListFragment
 import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.EquipmentInOperationListFragment
 import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftCompressorFragment
+import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftControlMeasurementFragment
 import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftFragment
 import java.util.*
 
@@ -70,6 +71,15 @@ class MainActivity :
 
     override fun onCompressorSelected() {
         val fragment = WorkingShiftCompressorFragment.newInstance()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onControlMeasurementSelected() {
+        val fragment = WorkingShiftControlMeasurementFragment.newInstance()
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, fragment)

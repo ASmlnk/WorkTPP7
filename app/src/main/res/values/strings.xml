@@ -31,4 +31,17 @@
     <string name="tn">tн</string>
     <string name="tk">tк</string>
     <string name="degree">°C</string>
+    <string name="V">V%</string>
+    <string name="humidity">Humidity</string>
+    <string name="humidity_tg_say">ТГ не более 12 г/м³ \nСЭУ не более 5 г/м³</string>
+    <string name="dew_point">Dew point</string>
+    <string name="dew_point_param">не более 15 °C</string>
+    <string name="hydrogen_nitrogen">Hydrogen - Nitrogen</string>
+    <string name="hydrogen_nitrogen_param">H2 не более 3% ⇵</string>
+    <string name="nitrogen_air">Nitrogen - Air</string>
+    <string name="nitrogen_air_param">О2 не менее 20% ↓</string>
+    <string name="air_nitrogen">Air - Nitrogen</string>
+    <string name="air_nitrogen_param">О2 не более 3% ⇵</string>
+    <string name="nitrogen_hydrogen">Nitrogen - Hydrogen</string>
+    <string name="nitrogen_hydrogen_param">H2 не менее 97% ↓</string>
 </resources>
