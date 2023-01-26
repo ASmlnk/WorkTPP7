@@ -75,7 +75,7 @@ class DefectRepository private constructor(context: Context) {
         }
 
         fun get(): DefectRepository {
-            return INSTANCE ?: throw IllegalStateException("CrimeRepository must be initialized")
+            return INSTANCE ?: throw IllegalStateException("DefectRepository must be initialized")
         }
     }
 }

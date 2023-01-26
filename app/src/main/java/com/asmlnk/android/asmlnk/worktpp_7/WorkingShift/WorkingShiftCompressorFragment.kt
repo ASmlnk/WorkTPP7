@@ -68,12 +68,14 @@ class WorkingShiftCompressorFragment: Fragment() {
         }
     }
     private fun updateUI(list: List<Compressor>) {
+        if (list.isNotEmpty()){
         val editText = list.first()
-        editTextVK1.setText(editText.vk1)
-        editTextVK2.setText(editText.vk2)
-        editTextVK4.setText(editText.vk4)
-        editTextVK5.setText(editText.vk5)
-        editTextVK6.setText(editText.vk6)
+            editTextVK1.setText(editText.vk1)
+            editTextVK2.setText(editText.vk2)
+            editTextVK4.setText(editText.vk4)
+            editTextVK5.setText(editText.vk5)
+            editTextVK6.setText(editText.vk6)
+        }
         adapter.compressors = list
         adapter.notifyDataSetChanged()
     }
