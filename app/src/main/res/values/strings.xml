@@ -47,4 +47,13 @@
     <string name="inspection_schedule">Inspection Schedule</string>
     <string name="day_shift" >с 8.00 до 20.00</string>
     <string name="night_shift" >с 20.00 до 8.00</string>
+    <string name="pathogen">Pathogen</string>
+    <string name="rotor">Rotor</string>
+    <string name="stator">Stator</string>
+    <string-array name="vvv">
+        <item>ТГ-1</item>
+        <item>ТГ-1</item>
+        <item>ТГ-1</item>
+    </string-array>
+
 </resources>
