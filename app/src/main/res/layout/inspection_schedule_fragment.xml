@@ -11,14 +11,20 @@
         android:id="@+id/data_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="-5dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
         android:backgroundTint="#FFB3B3AA"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="serif"
         android:gravity="center"
         android:padding="5dp"
+        android:shadowColor="#292626"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="5"
         android:text="dckskld"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
     <com.google.android.material.tabs.TabLayout

@@ -21,17 +21,23 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:layout_marginStart="30dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginBottom="-6dp"
+                android:text="@string/boiler_unit"
                 android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
                 android:backgroundTint="#D1D1D3"
                 android:backgroundTintMode="multiply"
+                android:fontFamily="monospace"
                 android:gravity="center"
                 android:padding="4dp"
-                android:text="@string/boiler_unit"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:shadowColor="#AFAB9D"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="5"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#635F51"
                 android:textSize="24sp" />
 
             <com.google.android.material.tabs.TabLayout
@@ -71,11 +77,16 @@
             android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
             android:backgroundTint="#D1D1D3"
             android:backgroundTintMode="multiply"
+            android:fontFamily="monospace"
             android:gravity="center"
             android:padding="4dp"
-            android:text="@string/turbogenerator"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="24sp"/>
+            android:shadowColor="#AFAB9D"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#635F51"
+            android:text="@string/turbogenerator" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout_turbogenerator"
@@ -112,11 +123,16 @@
                 android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
                 android:backgroundTint="#D1D1D3"
                 android:backgroundTintMode="multiply"
+                android:fontFamily="monospace"
                 android:gravity="center"
                 android:padding="4dp"
-                android:text="@string/other_equipment"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="24sp"/>
+                android:shadowColor="#AFAB9D"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="5"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#635F51"
+                android:text="@string/other_equipment" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout_other"

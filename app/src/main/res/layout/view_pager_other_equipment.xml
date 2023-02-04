@@ -39,6 +39,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s1"
+        android:textColor="#433C29"
         android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s1"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +55,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s2"
+        android:textColor="#433C29"
         android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s2"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +71,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s3"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s3"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +87,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s4"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s4"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,6 +103,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s5"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s5"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,6 +119,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s6"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s6"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,6 +135,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s7"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s7"
         app:layout_constraintStart_toStartOf="parent"
@@ -143,6 +150,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r2s1"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -160,7 +168,8 @@
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#433C29" />
 
     <CheckBox
         android:id="@+id/electric_motor_r2s3"
@@ -171,6 +180,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r2s3"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -185,6 +195,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r2s4"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -199,6 +210,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r2s5"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -213,6 +225,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r2s6"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -227,6 +240,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r2s7"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -242,6 +256,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s1"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s1"
@@ -257,6 +272,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s2"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s2"
@@ -272,6 +288,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s3"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s3"
@@ -287,6 +304,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s4"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s4"
@@ -302,6 +320,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s5"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s5"
@@ -317,6 +336,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s6"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s6"
@@ -332,6 +352,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s7"
+        android:textColor="#433C29"
         android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s7"
