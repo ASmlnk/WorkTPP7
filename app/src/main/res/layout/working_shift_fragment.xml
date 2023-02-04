@@ -1,25 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+    android:backgroundTint="#B3B19F"
+    android:backgroundTintMode="src_over">
+
+    <TextView
+        android:id="@+id/inspection_schedule_text_view"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:padding="18sp"
+        android:text="@string/inspection_schedule"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="20sp"
+        app:backgroundTint="#E7E7EA"
+        app:layout_constraintEnd_toEndOf="@+id/night_shift"
+        app:layout_constraintStart_toStartOf="@+id/day_shift"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/day_shift"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:drawable/spinner_background"
+        android:text="@string/day_shift"
+        app:backgroundTint="#DFDFE1"
+        app:layout_constraintEnd_toStartOf="@+id/night_shift"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inspection_schedule_text_view" />
+
+    <Button
+        android:id="@+id/night_shift"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:drawable/spinner_background"
+        android:text="@string/night_shift"
+        app:backgroundTint="#DFDFE1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/day_shift"
+        app:layout_constraintTop_toBottomOf="@+id/inspection_schedule_text_view" />
 
     <Button
         android:id="@+id/button_compressor"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="244dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/compressor"/>
+        android:background="@android:drawable/spinner_background"
+        android:text="@string/compressor"
+        app:backgroundTint="#DFDFE1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/control_measurement"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:text="@string/control_measurement"/>
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:drawable/spinner_background"
+        android:text="@string/control_measurement"
+        app:backgroundTint="#DFDFE1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_compressor" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

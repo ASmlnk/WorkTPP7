@@ -7,10 +7,8 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.core.view.isVisible
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.asmlnk.android.asmlnk.worktpp_7.EM
-import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.data.FirestoreElectricMotorRepository
+import com.asmlnk.android.asmlnk.worktpp_7.dataFirestore.FirestoreRepository
 import com.asmlnk.android.asmlnk.worktpp_7.R
 
 class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.EquipmentCategory>)
@@ -89,7 +87,7 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
                 checkBox.apply {
 
                     setOnCheckedChangeListener { _, isChecked ->
-                        FirestoreElectricMotorRepository()
+                        FirestoreRepository()
                             .addSchemaState(
                                 electricMotor,
                                 EM.CAT_BOILER_UNIT.кеуElectricMotor,
@@ -183,7 +181,7 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
                     checkBox.apply {
 
                         setOnCheckedChangeListener { _, isChecked ->
-                            FirestoreElectricMotorRepository()
+                            FirestoreRepository()
                                 .addSchemaState(
                                     electricMotor,
                                     EM.CAT_TURBOGENERATOR.кеуElectricMotor,
@@ -292,7 +290,7 @@ class AdapterEquipmentCategory(val list: List<EquipmentInOperationViewModel.Equi
                     checkBox.apply {
 
                         setOnCheckedChangeListener { _, isChecked ->
-                            FirestoreElectricMotorRepository()
+                            FirestoreRepository()
                                 .addSchemaState(
                                     electricMotor,
                                     EM.CAT_OTHER.кеуElectricMotor,

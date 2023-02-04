@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.asmlnk.android.asmlnk.worktpp_7.InspectionSchedule.InSc
 import com.asmlnk.android.asmlnk.worktpp_7.R
 
 class WorkingShiftFragment: Fragment() {
@@ -14,11 +16,16 @@ class WorkingShiftFragment: Fragment() {
     interface Callbacks {
         fun onCompressorSelected()
         fun onControlMeasurementSelected()
+        fun onInspectionScheduleSelected(workingShift: String)
     }
 
     private lateinit var buttonCompressor: Button
     private lateinit var buttonControlMeasurement: Button
-    private var callbacks: WorkingShiftFragment.Callbacks? = null
+    private lateinit var buttonDayShift: Button
+    private lateinit var buttonNightShift: Button
+    private lateinit var textInspectionSchedule :TextView
+
+    private var callbacks: Callbacks? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -32,8 +39,11 @@ class WorkingShiftFragment: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.working_shift_fragment, container, false)
 
+        buttonDayShift = view.findViewById(R.id.day_shift) as Button
+        buttonNightShift = view.findViewById(R.id.night_shift) as Button
         buttonCompressor = view.findViewById(R.id.button_compressor) as Button
         buttonControlMeasurement = view.findViewById(R.id.control_measurement) as Button
+        textInspectionSchedule = view.findViewById(R.id.inspection_schedule_text_view) as TextView
 
         return view
     }
@@ -47,6 +57,14 @@ class WorkingShiftFragment: Fragment() {
 
         buttonControlMeasurement.setOnClickListener {
             callbacks?.onControlMeasurementSelected()
+        }
+
+        buttonDayShift.setOnClickListener {
+            callbacks?.onInspectionScheduleSelected( InSc.DAY.get )
+        }
+
+        buttonNightShift.setOnClickListener {
+            callbacks?.onInspectionScheduleSelected( InSc.NIGHT.get )
         }
 
     }

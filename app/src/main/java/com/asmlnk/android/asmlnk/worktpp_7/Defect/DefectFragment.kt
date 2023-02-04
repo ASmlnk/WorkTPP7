@@ -23,8 +23,6 @@ import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.Observer
-import com.asmlnk.android.asmlnk.worktpp_7.Defect.Defect
-import com.asmlnk.android.asmlnk.worktpp_7.Defect.DefectDetailViewModel
 import com.asmlnk.android.asmlnk.worktpp_7.R
 import com.asmlnk.android.asmlnk.worktpp_7.getScaledBitmap
 import java.io.File

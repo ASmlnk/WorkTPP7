@@ -2,14 +2,12 @@ package com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.asmlnk.android.asmlnk.worktpp_7.EM
-import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.data.FirestoreElectricMotorRepository
-import com.google.firebase.firestore.SetOptions
+import com.asmlnk.android.asmlnk.worktpp_7.dataFirestore.FirestoreRepository
 import com.google.firebase.firestore.ktx.toObject
 
 class EquipmentInOperationViewModel: ViewModel() {
 
-    val firestoreElectricMotorRepository = FirestoreElectricMotorRepository()
+    val firestoreElectricMotorRepository = FirestoreRepository()
 
     val boilerUnitLiveData = MutableLiveData<List<EquipmentCategory>>()
     val turbogeneratorLiveData = MutableLiveData<List<EquipmentCategory>>()

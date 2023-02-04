@@ -1,38 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B3B19F"
+    android:backgroundTint="#B3B19F"
+    android:backgroundTintMode="src_over"
     android:gravity="center"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/defects"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:text="@string/defects" />
+        android:layout_marginBottom="5dp"
+        android:background="@android:drawable/spinner_background"
+        android:text="@string/defects"
+        app:backgroundTint="#DFDFE1" />
 
     <Button
         android:id="@+id/equipment_work"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
+        android:background="@android:drawable/spinner_background"
+        app:backgroundTint="#DFDFE1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:text="@string/equipment_work"/>
+        android:layout_marginBottom="5dp"
+        android:text="@string/equipment_work" />
 
     <Button
         android:id="@+id/working_shift"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
+        android:background="@android:drawable/spinner_background"
+        app:backgroundTint="#DFDFE1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:text="@string/working_shift"/>
+        android:layout_marginBottom="5dp"
+        android:text="@string/working_shift" />
+
+    <Button
+        android:id="@+id/inspection_schedule"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
+        android:background="@android:drawable/spinner_background"
+        app:backgroundTint="#DFDFE1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/inspection_schedule" />
 
     <Button
         android:id="@+id/button_em"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
+        android:background="@android:drawable/spinner_background"
+        app:backgroundTint="#DFDFE1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="electricMotor"/>
+        android:text="electricMotor" />
 
 </LinearLayout>

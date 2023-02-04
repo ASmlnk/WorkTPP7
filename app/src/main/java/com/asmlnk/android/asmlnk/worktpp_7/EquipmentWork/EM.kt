@@ -1,4 +1,4 @@
-package com.asmlnk.android.asmlnk.worktpp_7
+package com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork
 
 enum class EM (val кеуElectricMotor: String) {
     CAT_BOILER_UNIT("Котлоагрегаты"),

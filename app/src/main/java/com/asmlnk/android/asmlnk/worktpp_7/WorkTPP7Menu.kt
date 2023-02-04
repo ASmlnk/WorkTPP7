@@ -9,8 +9,8 @@ import android.widget.Button
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.ElectricMotor
-import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.data.FirestoreElectricMotorRepository
-import java.util.*
+import com.asmlnk.android.asmlnk.worktpp_7.dataFirestore.FirestoreRepository
+import com.asmlnk.android.asmlnk.worktpp_7.InspectionSchedule.Inspection
 
 class WorkTPP7Menu: Fragment() {
 
@@ -18,6 +18,7 @@ class WorkTPP7Menu: Fragment() {
         fun onDefectListSelected()
         fun onEquipmentListSelected()
         fun onWorkingShift()
+        //fun onInspectionScheduleSelected()
     }
 
     private var callbacks: Callbacks? = null
@@ -25,9 +26,11 @@ class WorkTPP7Menu: Fragment() {
     private lateinit var equipmentAtWork: Button
     private lateinit var buttonElectricMotor: Button
     private lateinit var buttonWorkingShift: Button
+    private lateinit var buttonInspectionSchedule: Button
 
-    private val firebaseRepository: FirestoreElectricMotorRepository = FirestoreElectricMotorRepository()
+    private val firebaseRepository: FirestoreRepository = FirestoreRepository()
     private val em: ElectricMotor = ElectricMotor()
+    private val inspection  = Inspection()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -45,6 +48,7 @@ class WorkTPP7Menu: Fragment() {
         equipmentAtWork = view.findViewById(R.id.equipment_work) as Button
         buttonElectricMotor = view.findViewById(R.id.button_em) as Button
         buttonWorkingShift = view.findViewById(R.id.working_shift) as Button
+        buttonInspectionSchedule = view.findViewById(R.id.inspection_schedule) as Button
 
         defects.setOnClickListener {
             callbacks?.onDefectListSelected()
@@ -58,8 +62,15 @@ class WorkTPP7Menu: Fragment() {
             callbacks?.onWorkingShift()
         }
 
+        buttonInspectionSchedule.setOnClickListener {
+           // callbacks?.onInspectionScheduleSelected()
+        }
+        buttonInspectionSchedule.isVisible = false
+
         buttonElectricMotor.setOnClickListener {
-            firebaseRepository.addElectricMotor(em)
+            //firebaseRepository.addElectricMotor(em)
+            firebaseRepository.addInspection(inspection)
+
         }
         buttonElectricMotor.isVisible = false
 

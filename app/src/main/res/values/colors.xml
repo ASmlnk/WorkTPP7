@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red_defect">#F19185</color>
     <color name="green_defect">#689E6A</color>
+    <color name="check_box_my">#787872</color>
+
 </resources>

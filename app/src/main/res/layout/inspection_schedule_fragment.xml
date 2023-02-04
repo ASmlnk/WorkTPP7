@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B3B19F"
+    android:backgroundTint="#B3B19F">
+
+    <TextView
+        android:id="@+id/data_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+        android:backgroundTint="#FFB3B3AA"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="dckskld"
+        android:textSize="18sp" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout_executor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-5dp"
+
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+        android:backgroundTint="#EAE8D4"
+        android:backgroundTintMode="src_in"
+        app:tabBackground="@drawable/common_google_signin_btn_text_light_normal_background"
+        app:tabIndicatorColor="#B3B19F"
+        app:tabIndicatorHeight="3dp"
+        app:tabRippleColor="#60652F" />
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager_inspection_schedule"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="match_parent"
+        android:background="#B3B19F"
+        >
+
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+</LinearLayout>

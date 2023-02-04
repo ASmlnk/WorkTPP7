@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#EAE8D4" >
 
     <TextView
         android:id="@+id/electric_motor_collected_all2"
@@ -38,6 +39,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s1"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -52,6 +54,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s2"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -66,6 +69,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s3"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -80,6 +84,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s4"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -94,6 +99,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s5"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -108,6 +114,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s6"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -122,6 +129,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r1s7"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_r2s7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -135,6 +143,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r2s1"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -148,6 +157,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r2s2"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -161,6 +171,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r2s3"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -174,6 +185,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r2s4"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -187,6 +199,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r2s5"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -200,6 +213,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r2s6"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -213,6 +227,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r2s7"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -227,6 +242,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s1"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s1"
         app:layout_constraintTop_toTopOf="parent" />
@@ -241,6 +257,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s2"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s2"
         app:layout_constraintTop_toTopOf="parent" />
@@ -255,6 +272,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s3"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s3"
         app:layout_constraintTop_toTopOf="parent" />
@@ -269,6 +287,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s4"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s4"
         app:layout_constraintTop_toTopOf="parent" />
@@ -283,6 +302,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s5"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s5"
         app:layout_constraintTop_toTopOf="parent" />
@@ -297,6 +317,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s6"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s6"
         app:layout_constraintTop_toTopOf="parent" />
@@ -311,6 +332,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="5dp"
         android:text="r3s7"
+        android:theme='@style/MyCheckBox'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_r2s7"
         app:layout_constraintTop_toTopOf="parent" />

@@ -86,7 +86,7 @@ class WorkingShiftControlMeasurementFragment: Fragment() {
 
     fun toast (text: String) {
         val toast = Toast.makeText(context, text, Toast.LENGTH_LONG)
-        toast.setGravity(Gravity.CENTER, 0, 0)
+        toast.setGravity(Gravity.TOP, 0, 0)
         toast.show()
     }
 

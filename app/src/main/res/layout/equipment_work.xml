@@ -13,26 +13,41 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#B3B19F"
+            android:backgroundTint="#B3B19F"
+            android:backgroundTintMode="src_over">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@android:drawable/button_onoff_indicator_off"
-            android:backgroundTintMode="src_in"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="@string/boiler_unit"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="24sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="-6dp"
+                android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                android:backgroundTint="#D1D1D3"
+                android:backgroundTintMode="multiply"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="@string/boiler_unit"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout_boiler_unit"
-                app:tabIndicatorColor="@color/teal_200"
-                app:tabIndicatorHeight="4dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="-9dp"
+                android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                android:backgroundTint="#EAE8D4"
+                android:backgroundTintMode="src_in"
+                app:tabBackground="@drawable/common_google_signin_btn_text_light_normal_background"
+                app:tabIndicatorColor="#B3B19F"
+                app:tabIndicatorHeight="4dp"
+                app:tabRippleColor="#60652F" />
 
 
             <androidx.viewpager2.widget.ViewPager2
@@ -40,16 +55,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="360dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                android:backgroundTint="#EAE8D4"
+                android:backgroundTintMode="multiply" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@android:drawable/button_onoff_indicator_off"
-            android:backgroundTintMode="src_in"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="-6dp"
+            android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+            android:backgroundTint="#D1D1D3"
+            android:backgroundTintMode="multiply"
             android:gravity="center"
             android:padding="4dp"
             android:text="@string/turbogenerator"
@@ -58,26 +79,39 @@
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout_turbogenerator"
-                app:tabIndicatorColor="@color/teal_200"
-                app:tabIndicatorHeight="4dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="-9dp"
+                android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                android:backgroundTint="#EAE8D4"
+                android:backgroundTintMode="src_in"
+                app:tabBackground="@drawable/common_google_signin_btn_text_light_normal_background"
+                app:tabIndicatorColor="#B3B19F"
+                app:tabIndicatorHeight="4dp"/>
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/pager_turbogenerator"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                android:backgroundTint="#EAE8D4"
+                android:backgroundTintMode="multiply"  />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@android:drawable/button_onoff_indicator_off"
-                android:backgroundTintMode="src_in"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="-6dp"
+                android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                android:backgroundTint="#D1D1D3"
+                android:backgroundTintMode="multiply"
                 android:gravity="center"
                 android:padding="4dp"
                 android:text="@string/other_equipment"
@@ -87,21 +121,29 @@
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout_other"
                 app:tabMode="scrollable"
-                app:tabIndicatorColor="@color/teal_200"
-                app:tabIndicatorHeight="4dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="-9dp"
+                android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                android:backgroundTint="#EAE8D4"
+                android:backgroundTintMode="src_in"
+                app:tabBackground="@drawable/common_google_signin_btn_text_light_normal_background"
+                app:tabIndicatorColor="#B3B19F"
+                app:tabIndicatorHeight="4dp"/>
 
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/pager_other_equipment"
                 android:layout_width="match_parent"
-
                 android:layout_height="480dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"/>
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                android:backgroundTint="#EAE8D4"
+                android:backgroundTintMode="multiply" />
 
         </LinearLayout>
 

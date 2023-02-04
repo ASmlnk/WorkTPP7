@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.asmlnk.android.asmlnk.worktpp_7.Defect.DefectFragment
 import com.asmlnk.android.asmlnk.worktpp_7.Defect.DefectListFragment
 import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.EquipmentInOperationListFragment
+import com.asmlnk.android.asmlnk.worktpp_7.InspectionSchedule.InspectionScheduleFragmentContainer
 import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftCompressorFragment
 import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftControlMeasurementFragment
 import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftFragment
@@ -20,7 +21,8 @@ class MainActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO) // запрет ночной темы
 
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
 
@@ -62,6 +64,15 @@ class MainActivity :
 
     override fun onWorkingShift() {
         val fragment = WorkingShiftFragment.newInstance()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onInspectionScheduleSelected (workingShift: String) {
+        val fragment = InspectionScheduleFragmentContainer.newInstance(workingShift)
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, fragment)

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EAE8D4"
     tools:layout_editor_absoluteX="-12dp"
     tools:layout_editor_absoluteY="0dp">
 
@@ -17,6 +18,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="МНС-1="
+        android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_mns" />
 
@@ -31,6 +33,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="МНУ-1Б"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintBottom_toTopOf="@+id/electric_motor_mnu_post"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_mnu_a" />
@@ -45,6 +48,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="МНУ-1="
+        android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_mnu_a" />
 
@@ -58,6 +62,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="МНУ-1А"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_mns_post" />
 
@@ -71,6 +76,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="МНС-1"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,6 +91,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="СлН-1Б"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_sln_a"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_vpu" />
@@ -100,6 +107,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="КН-1В"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_knb_v"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_kn_2" />
@@ -115,6 +123,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="КН-1Б"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_knb_b"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_kn_1" />
@@ -130,6 +139,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="КН-1А"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_mnu_a"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_knb_a"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_vpu" />
@@ -145,6 +155,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="ВПУ-1"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_mns_post"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_gon_b"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_pmn" />
@@ -159,6 +170,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="ГОН-1А"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -172,6 +184,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="ГОН-1Б"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_gon_a" />
 
@@ -185,6 +198,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="КНБ-1А"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_gon_b" />
 
@@ -198,6 +212,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="КНБ-1Б"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_knb_a" />
 
@@ -211,6 +226,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="СлН-1А"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_gon_b" />
 
@@ -224,6 +240,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="КНБ-1В"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/electric_motor_knb_b" />
 
@@ -238,6 +255,7 @@
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         android:padding="10dp"
         android:text="ПМН-1"
+        android:theme="@style/MyCheckBox"
         app:layout_constraintEnd_toStartOf="@+id/electric_motor_mns"
         app:layout_constraintStart_toEndOf="@+id/electric_motor_gon_a"
         app:layout_constraintTop_toTopOf="parent" />
