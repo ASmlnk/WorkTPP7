@@ -4,16 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+    android:backgroundTint="#ECE9D4"
+    android:backgroundTintMode="src_in"
     android:padding="5dp">
 
     <TextView
+        android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="ТГ-1"
+        android:layout_marginStart="5dp"
         android:padding="3dp"
-        android:textSize="24sp"
+        android:text="ТГ-1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,22 +26,73 @@
         android:id="@+id/text_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="15dp"
         android:padding="4dp"
-        android:text="чт, 24 dt 2023"
+        android:hint="чт, 24 dt 2023"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/list_text_stator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="@string/stator"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="21dp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBottom_toTopOf="@+id/list_text_rotor"
+        app:layout_constraintStart_toStartOf="@+id/list_text_rotor"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/list_text_rotor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/rotor"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBottom_toTopOf="@+id/list_text_pathogen"
+        app:layout_constraintStart_toEndOf="@+id/text_data"
+        app:layout_constraintTop_toBottomOf="@+id/list_text_stator" />
+
+    <TextView
+        android:id="@+id/list_text_pathogen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/pathogen"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/list_text_rotor"
+        app:layout_constraintTop_toBottomOf="@+id/list_text_rotor" />
+
+    <TextView
+        android:id="@+id/list_text_froze_stator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/MOm"
+        app:layout_constraintStart_toStartOf="@+id/list_text_froze_rotor"
+        app:layout_constraintTop_toTopOf="@+id/list_text_stator" />
+
+    <TextView
+        android:id="@+id/list_text_froze_pathogen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/MOm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/list_text_pathogen" />
+
+    <TextView
+        android:id="@+id/list_text_froze_rotor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/MOm"
+        app:layout_constraintStart_toStartOf="@+id/list_text_froze_pathogen"
+        app:layout_constraintTop_toTopOf="@+id/list_text_rotor" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

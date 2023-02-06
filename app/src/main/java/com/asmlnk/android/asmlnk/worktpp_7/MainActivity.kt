@@ -10,6 +10,7 @@ import com.asmlnk.android.asmlnk.worktpp_7.InspectionSchedule.InspectionSchedule
 import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftCompressorFragment
 import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftControlMeasurementFragment
 import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftFragment
+import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftGeneratorInsulation
 import java.util.*
 
 class MainActivity :
@@ -73,6 +74,15 @@ class MainActivity :
 
     override fun onInspectionScheduleSelected (workingShift: String) {
         val fragment = InspectionScheduleFragmentContainer.newInstance(workingShift)
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onGeneratorInsulationSelected() {
+        val fragment = WorkingShiftGeneratorInsulation.newInstance()
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, fragment)

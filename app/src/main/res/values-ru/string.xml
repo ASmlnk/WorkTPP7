@@ -48,9 +48,10 @@
     <string name="inspection_schedule">График осмотра</string>
     <string name="day_shift">с 8.00 до 20.00</string>
     <string name="night_shift">с 20.00 до 8.00</string>
-    <string name="pathogen">Возбудитель</string>
-    <string name="rotor">Ротор</string>
-    <string name="stator">Статор</string>
+    <string name="pathogen">Возбудитель:</string>
+    <string name="rotor">Ротор:</string>
+    <string name="stator">Статор:</string>
+    <string name="generator_insulation">Изоляция Генератора</string>
 
 
 </resources>

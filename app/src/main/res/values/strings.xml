@@ -47,13 +47,17 @@
     <string name="inspection_schedule">Inspection Schedule</string>
     <string name="day_shift" >с 8.00 до 20.00</string>
     <string name="night_shift" >с 20.00 до 8.00</string>
-    <string name="pathogen">Pathogen</string>
-    <string name="rotor">Rotor</string>
-    <string name="stator">Stator</string>
-    <string-array name="vvv">
+    <string name="pathogen">Pathogen:</string>
+    <string name="rotor">Rotor:</string>
+    <string name="stator">Stator:</string>
+    <string name="MOm" translatable="false">%1$s МОм</string>
+    <string name="generator_insulation">Generator Insulation</string>
+    <string-array name="spinner_generator">
         <item>ТГ-1</item>
-        <item>ТГ-1</item>
-        <item>ТГ-1</item>
+        <item>ТГ-3</item>
+        <item>ТГ-4</item>
+        <item>ТГ-5</item>
+        <item>ТГ-6</item>
     </string-array>
 
 </resources>

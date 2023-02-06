@@ -89,4 +89,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_compressor" />
 
+    <Button
+        android:id="@+id/generator_insulation"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@android:drawable/spinner_background"
+        android:text="@string/generator_insulation"
+        android:textColor="#433C29"
+        app:backgroundTint="#DFDFE1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/control_measurement" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

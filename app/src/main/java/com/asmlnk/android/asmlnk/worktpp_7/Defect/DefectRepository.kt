@@ -3,8 +3,8 @@ package com.asmlnk.android.asmlnk.worktpp_7.Defect
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.room.Room
-import com.asmlnk.android.asmlnk.worktpp_7.Defect.Defect
 import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.Compressor
+import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.GeneratorInsulation
 import com.asmlnk.android.asmlnk.worktpp_7.database.DefectDatabase
 import java.io.File
 import java.lang.IllegalStateException
@@ -19,17 +19,17 @@ class DefectRepository private constructor(context: Context) {
         context.applicationContext,
         DefectDatabase::class.java,
         DATABASE_NAME
-    ).build()
+    )
+        .build()
 
     private val defectDao = database.defectDao()
     private val compressorDao = database.compressorDao()
+    private val generatorInsulationDao = database.generatorInsulationDao()
     private val executor = Executors.newSingleThreadExecutor() // фоновый поток в котором будут выполняться нужные функции
     private val filesDir = context.applicationContext.filesDir
 
     fun getDefects(): LiveData<List<Defect>> = defectDao.getDefects()
     fun getDefect(id: UUID): LiveData<Defect?> = defectDao.getDefect(id)
-
-
 
     fun updateDefect(defect: Defect) {
         executor.execute {
@@ -64,6 +64,22 @@ class DefectRepository private constructor(context: Context) {
             compressorDao.deleteCompressor(compressor)
         }
     }
+
+    fun getGeneratorInsulation(): LiveData<List<GeneratorInsulation>> = generatorInsulationDao.getGeneratorInsulation()
+
+    fun addGeneratorInsulation(generatorInsulation: GeneratorInsulation) {
+        executor.execute {
+            generatorInsulationDao.addGeneratorInsulation(generatorInsulation)
+        }
+    }
+
+    fun deleteGeneratorInsulation(generatorInsulation: GeneratorInsulation) {
+        executor.execute {
+            generatorInsulationDao.deleteGeneratorInsulation(generatorInsulation)
+        }
+    }
+
+
 
     companion object {
         private var INSTANCE: DefectRepository? = null

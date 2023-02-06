@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#E8E7DB">
 
     <Spinner
         android:id="@+id/spinner_tg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:entries="@array/vvv"
+        android:entries="@array/spinner_generator"
         android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +77,13 @@
         app:layout_constraintBottom_toTopOf="@+id/edit_stator"
         app:layout_constraintStart_toStartOf="@+id/edit_stator" />
 
+    <TextView
+        android:id="@+id/reeeeeeee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/edit_pathogen"
+        app:layout_constraintTop_toTopOf="@+id/button_save" />
+
     <Button
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
@@ -91,6 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="80dp"
+        android:background="#B3B19F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
