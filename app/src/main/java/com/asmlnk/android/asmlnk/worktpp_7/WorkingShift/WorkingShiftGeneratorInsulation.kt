@@ -9,6 +9,7 @@ import android.widget.*
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.asmlnk.android.asmlnk.worktpp_7.R
 
@@ -20,13 +21,14 @@ class WorkingShiftGeneratorInsulation: Fragment(), AdapterView.OnItemSelectedLis
     private lateinit var editPathogen: EditText
     private lateinit var spinnerTG: Spinner
     private lateinit var textPathogen: TextView
-    private lateinit var tt: TextView
+    private lateinit var saveButton: Button
+
     private lateinit var adapter: ArrayAdapter<CharSequence>
+    private var adapterRV: AdapterGeneratorInsulation = AdapterGeneratorInsulation(emptyList())
 
     private val generatorInsulationVM: WorkingShiftGeneratorInsulationViewModel by lazy {
         ViewModelProvider(this) [WorkingShiftGeneratorInsulationViewModel::class.java]
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,12 +43,14 @@ class WorkingShiftGeneratorInsulation: Fragment(), AdapterView.OnItemSelectedLis
         editPathogen = view.findViewById(R.id.edit_pathogen) as EditText
         spinnerTG = view.findViewById(R.id.spinner_tg) as Spinner
         textPathogen = view.findViewById(R.id.text_pathogen) as TextView
-        tt = view.findViewById(R.id.reeeeeeee) as TextView
+        saveButton = view.findViewById(R.id.button_save)
 
         adapter = ArrayAdapter.createFromResource(
             requireContext(), R.array.spinner_generator, android.R.layout.simple_spinner_item)
         spinnerTG.adapter = adapter
 
+        generatorInsulationRecycler.layoutManager = LinearLayoutManager(context)
+        generatorInsulationRecycler.adapter = adapterRV
 
         return view
     }
@@ -54,21 +58,36 @@ class WorkingShiftGeneratorInsulation: Fragment(), AdapterView.OnItemSelectedLis
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        generatorInsulationVM.generatorInsulationLiveData.observe(viewLifecycleOwner) { generatorInsulation ->
+            adapterRV.list = generatorInsulation.sortedByDescending { it.date }
+            adapterRV.notifyDataSetChanged()
+        }
         spinnerTG.onItemSelectedListener = this
 
-
+        saveButton.setOnClickListener {
+            val generatorInsulation = GeneratorInsulation()
+            generatorInsulation.name = generatorInsulationVM.textSpinner
+            generatorInsulation.stator = editStator.text.toString()
+            generatorInsulation.rotor = editRotor.text.toString()
+            generatorInsulation.pathogen = editPathogen.text.toString()
+            generatorInsulationVM.addGeneratorInsulation(generatorInsulation)
+            generatorInsulationRecycler.adapter?.notifyDataSetChanged()
+        }
     }
 
     fun updateUIFalse() {
+        editPathogen.text.clear()
+        editRotor.text.clear()
+        editStator.text.clear()
         textPathogen.isVisible = false
         editPathogen.isVisible = false
-        tt.text = generatorInsulationVM.textSpinner
     }
 
     fun updateUITrue() {
+        editRotor.text.clear()
+        editStator.text.clear()
         textPathogen.isVisible = true
         editPathogen.isVisible = true
-        tt.text = generatorInsulationVM.textSpinner
     }
 
     companion object {

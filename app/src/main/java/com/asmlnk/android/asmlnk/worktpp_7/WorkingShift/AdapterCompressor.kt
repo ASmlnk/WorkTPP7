@@ -35,7 +35,6 @@ class AdapterCompressor(var compressors: List<Compressor>):
                             "ВК-6 = ${compressor.vk6}\n\n"
                     myDialog
                         .setMessage(text).create().show()
-
                 }
             }
         }
