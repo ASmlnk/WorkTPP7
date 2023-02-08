@@ -47,6 +47,10 @@ class WorkingShiftGeneratorInsulation: Fragment(), AdapterView.OnItemSelectedLis
 
         adapter = ArrayAdapter.createFromResource(
             requireContext(), R.array.spinner_generator, android.R.layout.simple_spinner_item)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        val adapter1: ArrayAdapter<String> = ArrayAdapter(this, R.id.textView)
+
         spinnerTG.adapter = adapter
 
         generatorInsulationRecycler.layoutManager = LinearLayoutManager(context)
@@ -86,6 +90,7 @@ class WorkingShiftGeneratorInsulation: Fragment(), AdapterView.OnItemSelectedLis
     fun updateUITrue() {
         editRotor.text.clear()
         editStator.text.clear()
+        editPathogen.text.clear()
         textPathogen.isVisible = true
         editPathogen.isVisible = true
     }
