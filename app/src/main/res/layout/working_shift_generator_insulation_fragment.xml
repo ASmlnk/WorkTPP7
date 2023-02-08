@@ -22,8 +22,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#B3B2AA"
+        android:backgroundTintMode="multiply"
         android:entries="@array/spinner_generator"
         android:padding="4dp"
+        android:popupBackground="@android:drawable/spinner_dropdown_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

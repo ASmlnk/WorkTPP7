@@ -49,7 +49,8 @@ class WorkingShiftGeneratorInsulation: Fragment(), AdapterView.OnItemSelectedLis
             requireContext(), R.array.spinner_generator, android.R.layout.simple_spinner_item)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-        val adapter1: ArrayAdapter<String> = ArrayAdapter(this, R.id.textView)
+        //val adapter1: ArrayAdapter<String> = ArrayAdapter(this, R.layout.row, R.id.weekofday, R.array.spinner_generator )
+
 
         spinnerTG.adapter = adapter
 
