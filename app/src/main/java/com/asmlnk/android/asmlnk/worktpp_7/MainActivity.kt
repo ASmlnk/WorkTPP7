@@ -7,10 +7,7 @@ import com.asmlnk.android.asmlnk.worktpp_7.Defect.DefectFragment
 import com.asmlnk.android.asmlnk.worktpp_7.Defect.DefectListFragment
 import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.EquipmentInOperationListFragment
 import com.asmlnk.android.asmlnk.worktpp_7.InspectionSchedule.InspectionScheduleFragmentContainer
-import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftCompressorFragment
-import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftControlMeasurementFragment
-import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftFragment
-import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.WorkingShiftGeneratorInsulation
+import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.*
 import java.util.*
 
 class MainActivity :
@@ -83,6 +80,15 @@ class MainActivity :
 
     override fun onGeneratorInsulationSelected() {
         val fragment = WorkingShiftGeneratorInsulation.newInstance()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onElectrolysisSelected() {
+        val fragment = WorkingShiftElectrolysis.newInstance()
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, fragment)

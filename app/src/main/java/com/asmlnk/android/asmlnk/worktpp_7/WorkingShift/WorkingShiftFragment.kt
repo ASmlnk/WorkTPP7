@@ -18,6 +18,7 @@ class WorkingShiftFragment: Fragment() {
         fun onControlMeasurementSelected()
         fun onInspectionScheduleSelected(workingShift: String)
         fun onGeneratorInsulationSelected()
+        fun onElectrolysisSelected()
     }
 
     private lateinit var buttonCompressor: Button
@@ -25,6 +26,7 @@ class WorkingShiftFragment: Fragment() {
     private lateinit var buttonDayShift: Button
     private lateinit var buttonNightShift: Button
     private lateinit var buttonGeneratorInsulation: Button
+    private lateinit var buttonElectrolysis: Button
     private lateinit var textInspectionSchedule :TextView
 
     private var callbacks: Callbacks? = null
@@ -46,6 +48,7 @@ class WorkingShiftFragment: Fragment() {
         buttonCompressor = view.findViewById(R.id.button_compressor) as Button
         buttonControlMeasurement = view.findViewById(R.id.control_measurement) as Button
         buttonGeneratorInsulation = view.findViewById(R.id.generator_insulation) as Button
+        buttonElectrolysis = view.findViewById(R.id.electrolysis) as Button
         textInspectionSchedule = view.findViewById(R.id.inspection_schedule_text_view) as TextView
 
         return view
@@ -72,6 +75,10 @@ class WorkingShiftFragment: Fragment() {
 
         buttonGeneratorInsulation.setOnClickListener {
             callbacks?.onGeneratorInsulationSelected()
+        }
+
+        buttonElectrolysis.setOnClickListener {
+            callbacks?.onElectrolysisSelected()
         }
 
     }
