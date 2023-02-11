@@ -8,7 +8,7 @@
     <Spinner
         android:id="@+id/spinnerReceiverH1"
         android:layout_width="60dp"
-        android:layout_height="35dp"
+        android:layout_height="38dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/common_google_signin_btn_text_light_normal_background"
@@ -21,7 +21,7 @@
     <Spinner
         android:id="@+id/spinnerReceiverH2"
         android:layout_width="60dp"
-        android:layout_height="35dp"
+        android:layout_height="38dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/common_google_signin_btn_text_light_normal_background"
         android:backgroundTint="#D8D6CF"
@@ -33,7 +33,7 @@
     <Spinner
         android:id="@+id/spinnerReceiverH3"
         android:layout_width="60dp"
-        android:layout_height="35dp"
+        android:layout_height="38dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/common_google_signin_btn_text_light_normal_background"
         android:backgroundTint="#D8D6CF"
@@ -45,7 +45,7 @@
     <Spinner
         android:id="@+id/spinnerReceiverH4"
         android:layout_width="60dp"
-        android:layout_height="35dp"
+        android:layout_height="38dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/common_google_signin_btn_text_light_normal_background"
         android:backgroundTint="#D8D6CF"
@@ -56,8 +56,8 @@
 
     <Spinner
         android:id="@+id/spinnerReceiverH5"
-        android:layout_width="40dp"
-        android:layout_height="35dp"
+        android:layout_width="48dp"
+        android:layout_height="37dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/common_google_signin_btn_text_light_normal_background"
         android:backgroundTint="#D8D6CF"
@@ -68,8 +68,8 @@
 
     <Spinner
         android:id="@+id/spinnerReceiverH6"
-        android:layout_width="40dp"
-        android:layout_height="35dp"
+        android:layout_width="48dp"
+        android:layout_height="37dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/common_google_signin_btn_text_light_normal_background"
         android:backgroundTint="#D8D6CF"
@@ -81,7 +81,7 @@
     <Spinner
         android:id="@+id/spinnerReceiverN1"
         android:layout_width="60dp"
-        android:layout_height="35dp"
+        android:layout_height="38dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/common_google_signin_btn_text_light_normal_background"
         android:backgroundTint="#D8D6CF"
@@ -93,7 +93,7 @@
     <Spinner
         android:id="@+id/spinnerReceiverN2"
         android:layout_width="60dp"
-        android:layout_height="35dp"
+        android:layout_height="38dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/common_google_signin_btn_text_light_normal_background"
         android:backgroundTint="#D8D6CF"
@@ -105,7 +105,7 @@
     <Spinner
         android:id="@+id/spinnerReceiverN3"
         android:layout_width="60dp"
-        android:layout_height="35dp"
+        android:layout_height="38dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/common_google_signin_btn_text_light_normal_background"
         android:backgroundTint="#D8D6CF"
@@ -117,7 +117,7 @@
     <Spinner
         android:id="@+id/spinnerElectrolysis"
         android:layout_width="60dp"
-        android:layout_height="35dp"
+        android:layout_height="38dp"
         android:background="@drawable/common_google_signin_btn_text_light_normal_background"
         android:backgroundTint="#D8D6CF"
         android:backgroundTintMode="multiply"
