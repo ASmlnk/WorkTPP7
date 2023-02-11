@@ -28,11 +28,25 @@ class AdapterCompressor(var compressors: List<Compressor>):
                 setOnClickListener {
                     val myDialog = AlertDialog.Builder(itemView.context)
                     val compressor = compressors[position]
+                    val textCompressors = when(compressor.compressors1) {
+                        "1" -> "ВК-1"
+                        "2" -> "ВК-2"
+                        else -> ""
+                    } + ", " +
+                            when(compressor.compressors2) {
+                                "1" -> "ВК-4"
+                                "2" -> "ВК-5"
+                                "3" -> "ВК-6"
+                                else -> ""
+                            }
+
                     val text = "ВК-1 = ${compressor.vk1}\n\n" +
                             "ВК-2 = ${compressor.vk2}\n\n" +
                             "ВК-4 = ${compressor.vk4}\n\n" +
                             "ВК-5 = ${compressor.vk5}\n\n" +
-                            "ВК-6 = ${compressor.vk6}\n\n"
+                            "ВК-6 = ${compressor.vk6}\n\n" +
+                            "В работе: " + textCompressors
+
                     myDialog
                         .setMessage(text).create().show()
                 }
@@ -45,7 +59,6 @@ class AdapterCompressor(var compressors: List<Compressor>):
             val dateFormat = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM).format(compressor.date)
             dateText.text = dateFormat.toString()
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

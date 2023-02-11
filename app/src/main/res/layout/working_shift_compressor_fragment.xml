@@ -3,7 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#E8E7DB">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+        android:backgroundTint="#EDEBE1"
+        android:backgroundTintMode="multiply"
+        app:layout_constraintBottom_toTopOf="@+id/list_compressor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_compressors_1"
+        android:layout_width="77dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#D8D6CF"
+        android:backgroundTintMode="multiply"
+        android:padding="1dp"
+        app:layout_constraintEnd_toEndOf="@+id/vk_5"
+        app:layout_constraintTop_toBottomOf="@+id/vk_5" />
+
+    <Spinner
+        android:id="@+id/spinner_compressors_2"
+        android:layout_width="77dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#D8D6CF"
+        android:backgroundTintMode="multiply"
+        android:padding="1dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_compressors_1"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_compressors_1" />
 
     <EditText
         android:id="@+id/vk_6"
@@ -85,7 +121,10 @@
         android:id="@+id/list_compressor"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
+        android:background="#B3B19F"
+        android:backgroundTintMode="screen"
+        android:paddingTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -154,9 +193,10 @@
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/save"
-        app:layout_constraintEnd_toEndOf="@+id/vk_5"
-        app:layout_constraintTop_toTopOf="@+id/vk_6" />
+        app:layout_constraintStart_toStartOf="@+id/text_vk6"
+        app:layout_constraintTop_toTopOf="@+id/spinner_compressors_2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.asmlnk.android.asmlnk.worktpp_7.R
+import io.grpc.Context
 
 class WorkingShiftGeneratorInsulation: Fragment(), AdapterView.OnItemSelectedListener {
 
@@ -45,12 +46,15 @@ class WorkingShiftGeneratorInsulation: Fragment(), AdapterView.OnItemSelectedLis
         textPathogen = view.findViewById(R.id.text_pathogen) as TextView
         saveButton = view.findViewById(R.id.button_save)
 
-        adapter = ArrayAdapter.createFromResource(
+       /* adapter = ArrayAdapter.createFromResource(
             requireContext(), R.array.spinner_generator, android.R.layout.simple_spinner_item)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_genrrator_insulation)*/
 
-        //val adapter1: ArrayAdapter<String> = ArrayAdapter(this, R.layout.row, R.id.weekofday, R.array.spinner_generator )
-
+        adapter = ArrayAdapter(
+            requireContext(),
+            R.layout.simple_spinner_dropdown_genrrator_insulation,
+        R.id.text_spinner, generatorInsulationVM.data as List<CharSequence>
+        )
 
         spinnerTG.adapter = adapter
 

@@ -52,6 +52,17 @@
     <string name="stator">Stator:</string>
     <string name="MOm" translatable="false">%1$s МОм</string>
     <string name="generator_insulation">Generator Insulation</string>
+    <string name="titleReceiverH1" translatable="false">H2 №1</string>
+    <string name="titleReceiverH2" translatable="false">H2 №2</string>
+    <string name="titleReceiverH3" translatable="false">H2 №3</string>
+    <string name="titleReceiverH4" translatable="false">H2 №4</string>
+    <string name="titleReceiverH5" translatable="false">H2 №5</string>
+    <string name="titleReceiverH6" translatable="false">H2 №6</string>
+    <string name="titleReceiverN1" translatable="false">N2 №1</string>
+    <string name="titleReceiverN2" translatable="false">N2 №2</string>
+    <string name="titleReceiverN3" translatable="false">N2 №3</string>
+    <string name="electrolysis">Electrolysis</string>
+    <string name="receiver_volume" translatable="false">%1$s м3/ %2$s м3</string>
     <string-array name="spinner_generator">
         <item>ТГ-1</item>
         <item>ТГ-3</item>

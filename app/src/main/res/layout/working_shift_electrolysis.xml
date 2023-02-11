@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/spinnerReceiverH1"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#D8D6CF"
+        android:backgroundTintMode="multiply"
+        android:padding="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerReceiverH2"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#D8D6CF"
+        android:backgroundTintMode="multiply"
+        android:padding="1dp"
+        app:layout_constraintStart_toStartOf="@+id/spinnerReceiverH1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerReceiverH1" />
+
+    <Spinner
+        android:id="@+id/spinnerReceiverH3"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#D8D6CF"
+        android:backgroundTintMode="multiply"
+        android:padding="1dp"
+        app:layout_constraintStart_toStartOf="@+id/spinnerReceiverH2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerReceiverH2" />
+
+    <Spinner
+        android:id="@+id/spinnerReceiverH4"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#D8D6CF"
+        android:backgroundTintMode="multiply"
+        android:padding="1dp"
+        app:layout_constraintStart_toStartOf="@+id/spinnerReceiverH1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerReceiverH3" />
+
+    <Spinner
+        android:id="@+id/spinnerReceiverH5"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#D8D6CF"
+        android:backgroundTintMode="multiply"
+        android:padding="1dp"
+        app:layout_constraintStart_toStartOf="@+id/spinnerReceiverH1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerReceiverH4" />
+
+    <Spinner
+        android:id="@+id/spinnerReceiverH6"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#D8D6CF"
+        android:backgroundTintMode="multiply"
+        android:padding="1dp"
+        app:layout_constraintStart_toStartOf="@+id/spinnerReceiverH1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerReceiverH5" />
+
+    <Spinner
+        android:id="@+id/spinnerReceiverN1"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#D8D6CF"
+        android:backgroundTintMode="multiply"
+        android:padding="1dp"
+        app:layout_constraintStart_toStartOf="@+id/spinnerReceiverH1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerReceiverH6" />
+
+    <Spinner
+        android:id="@+id/spinnerReceiverN2"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#D8D6CF"
+        android:backgroundTintMode="multiply"
+        android:padding="1dp"
+        app:layout_constraintStart_toStartOf="@+id/spinnerReceiverN1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerReceiverN1" />
+
+    <Spinner
+        android:id="@+id/spinnerReceiverN3"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#D8D6CF"
+        android:backgroundTintMode="multiply"
+        android:padding="1dp"
+        app:layout_constraintStart_toStartOf="@+id/spinnerReceiverN1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerReceiverN2" />
+
+    <Spinner
+        android:id="@+id/spinnerElectrolysis"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#D8D6CF"
+        android:backgroundTintMode="multiply"
+        android:padding="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/titleElectrolysis"
+        app:layout_constraintStart_toEndOf="@+id/titleElectrolysis" />
+
+    <TextView
+        android:id="@+id/titleReceiverH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/titleReceiverH1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverH1"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerReceiverH1" />
+
+    <TextView
+        android:id="@+id/titleReceiverH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/titleReceiverH2"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverH2"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerReceiverH2" />
+
+    <TextView
+        android:id="@+id/titleReceiverH3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/titleReceiverH3"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverH3"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerReceiverH3" />
+
+    <TextView
+        android:id="@+id/titleReceiverH4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/titleReceiverH4"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverH4"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerReceiverH4" />
+
+    <TextView
+        android:id="@+id/titleReceiverH5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/titleReceiverH5"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverH5"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerReceiverH5" />
+
+    <TextView
+        android:id="@+id/titleReceiverH6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/titleReceiverH6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverH6"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerReceiverH6" />
+
+    <TextView
+        android:id="@+id/titleReceiverN1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/titleReceiverN1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverN1"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerReceiverN1" />
+
+    <TextView
+        android:id="@+id/titleReceiverN2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/titleReceiverN2"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverN2"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerReceiverN2" />
+
+    <TextView
+        android:id="@+id/titleReceiverN3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/titleReceiverN3"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverN3"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerReceiverN3" />
+
+    <TextView
+        android:id="@+id/titleElectrolysis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:padding="5dp"
+        android:text="@string/electrolysis"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/titleReceiverN3"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerReceiverN3" />
+
+    <TextView
+        android:id="@+id/volumeReceiverH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:padding="5dp"
+        android:text="@string/receiver_volume"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverH1"
+        app:layout_constraintStart_toEndOf="@+id/spinnerReceiverH1" />
+
+    <TextView
+        android:id="@+id/volumeReceiverH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:padding="5dp"
+        android:text="@string/receiver_volume"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverH2"
+        app:layout_constraintStart_toEndOf="@+id/spinnerReceiverH2" />
+
+    <TextView
+        android:id="@+id/volumeReceiverH3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:padding="5dp"
+        android:text="@string/receiver_volume"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverH3"
+        app:layout_constraintStart_toEndOf="@+id/spinnerReceiverH3" />
+
+    <TextView
+        android:id="@+id/volumeReceiverH4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:padding="5dp"
+        android:text="@string/receiver_volume"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverH4"
+        app:layout_constraintStart_toEndOf="@+id/spinnerReceiverH4" />
+
+    <TextView
+        android:id="@+id/volumeReceiverH5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/receiver_volume"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverH5"
+        app:layout_constraintStart_toStartOf="@+id/volumeReceiverH4" />
+
+    <TextView
+        android:id="@+id/volumeReceiverH6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/receiver_volume"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverH6"
+        app:layout_constraintStart_toStartOf="@+id/volumeReceiverH5" />
+
+    <TextView
+        android:id="@+id/volumeReceiverN1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/receiver_volume"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverN1"
+        app:layout_constraintStart_toStartOf="@+id/volumeReceiverH6" />
+
+    <TextView
+        android:id="@+id/volumeReceiverN2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:padding="5dp"
+        android:text="@string/receiver_volume"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverN2"
+        app:layout_constraintStart_toEndOf="@+id/spinnerReceiverN2" />
+
+    <TextView
+        android:id="@+id/volumeReceiverN3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:padding="5dp"
+        android:text="@string/receiver_volume"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerReceiverN3"
+        app:layout_constraintStart_toEndOf="@+id/spinnerReceiverN3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

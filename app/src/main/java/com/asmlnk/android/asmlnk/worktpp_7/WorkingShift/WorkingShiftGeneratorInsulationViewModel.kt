@@ -7,6 +7,8 @@ class WorkingShiftGeneratorInsulationViewModel: ViewModel() {
 
     var textSpinner = ""
 
+    val data = mutableListOf("ТГ-1", "ТГ-3", "ТГ-4", "ТГ-5", "ТГ-6")
+
     val generatorInsulationRepository = DefectRepository.get()
 
     val generatorInsulationLiveData = generatorInsulationRepository.getGeneratorInsulation()
