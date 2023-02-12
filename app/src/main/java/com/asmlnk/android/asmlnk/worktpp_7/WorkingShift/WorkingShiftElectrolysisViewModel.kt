@@ -9,6 +9,10 @@ class WorkingShiftElectrolysisViewModel: ViewModel() {
     val listVolumeN = listOf(0.0, 4.0, 4.5, 5.0, 5.5, 6.0)
     val listElectrolysis = listOf("", "1", "2")
 
+    var configuration = 1
+
+
+
 
 
 }

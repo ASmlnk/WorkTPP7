@@ -1,11 +1,13 @@
 package com.asmlnk.android.asmlnk.worktpp_7.WorkingShift
 
 import android.os.Bundle
+import android.os.storage.StorageVolume
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.asmlnk.android.asmlnk.worktpp_7.R
@@ -54,7 +56,21 @@ class WorkingShiftElectrolysis: Fragment() {
             }
         }
 
-        binding.spinnerReceiverH2.onItemSelectedListener = AdapterSpinner()
+        binding.spinnerReceiverH2.onItemSelectedListener = AdapterSpinner(binding.volumeReceiverH2, 20)
+
+        binding.configuration.setOnClickListener {
+            workingShiftElectrolysisVM.configuration = 2
+
+        }
+
+    }
+
+    fun updateUI(n: Double, oneVolume: Int, textVolume: TextView) {
+        val volumeAll = (n*oneVolume).toInt()
+        var volumeGenerator = if (workingShiftElectrolysisVM.configuration == 1)  50 else 68
+        val volumeRemainder = (volumeAll - volumeGenerator )
+        val volumeRemainderText = if (volumeRemainder < 0) 0 else volumeRemainder
+        textVolume.text = context?.getString(R.string.receiver_volume, oneVolume.toString(), volumeAll.toString(), volumeRemainderText.toString())
     }
 
     fun arrayAdapter(list: List<Double>): ArrayAdapter<Double> {
@@ -65,15 +81,16 @@ class WorkingShiftElectrolysis: Fragment() {
         )
     }
 
-    private inner class AdapterSpinner: AdapterView.OnItemSelectedListener {
-        override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+    private inner class AdapterSpinner(val textVolume: TextView, val oneVolume: Int): AdapterView.OnItemSelectedListener {
 
+        override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+            var n = p0?.getItemAtPosition(p2) as Double
+            updateUI(n, oneVolume, textVolume)
         }
 
         override fun onNothingSelected(p0: AdapterView<*>?) {
 
         }
-
     }
 
     companion object {

@@ -62,7 +62,7 @@
     <string name="titleReceiverN2" translatable="false">N2 №2</string>
     <string name="titleReceiverN3" translatable="false">N2 №3</string>
     <string name="electrolysis">Electrolysis</string>
-    <string name="receiver_volume" translatable="false">%1$s м3/ %2$s м3</string>
+    <string name="receiver_volume" translatable="false">%1$s м3 / %2$s м3 / %3$s м3</string>
     <string-array name="spinner_generator">
         <item>ТГ-1</item>
         <item>ТГ-3</item>
