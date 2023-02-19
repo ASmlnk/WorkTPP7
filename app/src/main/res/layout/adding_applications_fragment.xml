@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textManufacturingFacility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/shop_selection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerManufacturingFacility"
+        android:layout_width="164dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:backgroundTint="#D8D6CF"
+        android:backgroundTintMode="multiply"
+        android:padding="1dp"
+        app:layout_constraintEnd_toEndOf="@+id/textManufacturingFacility"
+        app:layout_constraintStart_toStartOf="@+id/textManufacturingFacility"
+        app:layout_constraintTop_toBottomOf="@+id/textManufacturingFacility" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabTypeApplications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+        android:backgroundTint="#EAE8D4"
+        android:backgroundTintMode="src_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerManufacturingFacility"
+        app:tabBackground="@drawable/common_google_signin_btn_text_light_normal_background"
+        app:tabIndicatorColor="#B3B19F"
+        app:tabIndicatorHeight="4dp"
+        app:tabRippleColor="#60652F" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pagerTypeApplications"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+        android:backgroundTint="#EAE8D4"
+        android:backgroundTintMode="multiply"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabTypeApplications"></androidx.viewpager2.widget.ViewPager2>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

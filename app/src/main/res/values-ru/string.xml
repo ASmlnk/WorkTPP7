@@ -60,6 +60,7 @@
         Объем ТГ-3,5,6: 2*34 м3 \n
         Запас H2: %1$s м3
     </string>
+    <string name="shop_selection">Выбрать Цех</string>
 
 
 </resources>
