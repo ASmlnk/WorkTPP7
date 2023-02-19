@@ -3,12 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/drawable/button_conf_electrolysis.xml" value="0.271" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/drawable/button_conf_electrolysis_activ.xml" value="0.271" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/drawable/ic_baseline_looks_one_24.xml" value="0.2395" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/drawable/ic_baseline_looks_one_24_bw.xml" value="0.2395" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/drawable/ic_baseline_looks_two_24.xml" value="0.2395" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/drawable/ic_baseline_looks_two_24_bw.xml" value="0.2395" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/activity_main.xml" value="0.2520833333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/center_list_menu.xml" value="0.4" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/defect_list_fragment.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/equipment_at_work.xml" value="0.21846943138093203" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/equipment_work.xml" value="0.19628286491387126" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/fragment_defect.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/inspection_schedule_fragment.xml" value="0.21846943138093203" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/list_item_defect.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/view_pager_turbogenerator.xml" value="0.1590678824721378" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/working_shift_compressor_fragment.xml" value="0.13121604680317592" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/working_shift_control_measurement_fragment.xml" value="0.2237263982899893" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/working_shift_electrolysis.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/working_shift_fragment.xml" value="0.19628286491387126" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/layout/working_shift_generator_insulation_fragment.xml" value="0.25883952855847686" />
         <entry key="..\:/Users/user/AndroidStudioProjects/WorkTPP7/app/src/main/res/menu/fragment_defect_list.xml" value="0.26510416666666664" />
         <entry key="..\:/WorkTPP7/app/src/main/res/layout/equipment_at_work.xml" value="0.196875" />
         <entry key="..\:/WorkTPP7/app/src/main/res/layout/equipment_work.xml" value="0.22" />

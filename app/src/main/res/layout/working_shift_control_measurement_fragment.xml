@@ -4,12 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"    >
+    android:fillViewport="true"
+    android:background="#F6F4EC">
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="211dp"
+        android:layout_height="214dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+        android:backgroundTint="#EDE5D2"
+        android:backgroundTintMode="multiply"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pk_ata"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="205dp"
+        android:layout_height="311dp"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+        android:backgroundTint="#EDE5D2"
+        android:backgroundTintMode="multiply"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/textView14"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/textView7">
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/edit_pn"
@@ -149,12 +182,16 @@
         app:layout_constraintStart_toEndOf="@+id/edit_tk"
         app:layout_constraintTop_toTopOf="@+id/text_tk" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+        android:backgroundTint="#CAB985"
+        android:backgroundTintMode="multiply"
         android:text="@string/V"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/tk_degree"
         app:layout_constraintStart_toStartOf="@+id/text_tk"
         app:layout_constraintTop_toBottomOf="@+id/edit_tk" />
@@ -212,8 +249,8 @@
         android:text="@string/hydrogen_nitrogen"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <TextView
@@ -290,10 +327,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="142dp"
         android:text="@string/nitrogen_hydrogen_param"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
         app:layout_constraintStart_toStartOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />

@@ -3,6 +3,8 @@ package com.asmlnk.android.asmlnk.worktpp_7.dataFirestore
 import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.ElectricMotor
 import com.asmlnk.android.asmlnk.worktpp_7.InspectionSchedule.InSc
 import com.asmlnk.android.asmlnk.worktpp_7.InspectionSchedule.Inspection
+import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.Electrolysis
+import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.*
 
 class FirestoreRepository: IFirestoreRepository {
@@ -103,6 +105,29 @@ class FirestoreRepository: IFirestoreRepository {
         return remoteDB.collection(nameCategory)
     }
 
+    override fun getElectrolysis(): Task<DocumentSnapshot> {
+        return remoteDB.collection("Электролизерная").document("Ресивера").get()
+    }
+
+    override fun addElectrolysis(electrolysis: Electrolysis) {
+        val electrolysisData = HashMap<String, Any>()
+
+        electrolysisData["h2_1"] = electrolysis.h2_1
+        electrolysisData["h2_2"] = electrolysis.h2_2
+        electrolysisData["h2_3"] = electrolysis.h2_3
+        electrolysisData["h2_4"] = electrolysis.h2_4
+        electrolysisData["h2_5"] = electrolysis.h2_5
+        electrolysisData["h2_6"] = electrolysis.h2_6
+        electrolysisData["n2_1"] = electrolysis.n2_1
+        electrolysisData["n2_2"] = electrolysis.n2_2
+        electrolysisData["n2_3"] = electrolysis.n2_3
+        electrolysisData["electrolysis"] = electrolysis.electrolysis
+
+        remoteDB.collection("Электролизерная")
+            .document("Ресивера").set(electrolysisData, SetOptions.merge())
+    }
+
+
     override fun addElectricMotor(electricMotor: ElectricMotor) {
         val electricMotorData = HashMap<String, Any>()
 
@@ -139,5 +164,4 @@ class FirestoreRepository: IFirestoreRepository {
         remoteDB.collection("ГрафикОсмотра")
             .add(inspectionData)
     }
-
 }

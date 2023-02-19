@@ -63,6 +63,13 @@
     <string name="titleReceiverN3" translatable="false">N2 №3</string>
     <string name="electrolysis">Electrolysis</string>
     <string name="receiver_volume" translatable="false">%1$s м3 / %2$s м3 / %3$s м3</string>
+    <string name="configuration">Configuration</string>
+    <string name="receiver_parameters">Receiver Volume / Volume In The Receiver / Stock</string>
+    <string name="volume_generator">
+         Volume of TG-1.4: 50 m3\n
+        Volume of TG-3,5,6: 2*34 m3\n
+        Stock H2: %1$s m3
+    </string>
     <string-array name="spinner_generator">
         <item>ТГ-1</item>
         <item>ТГ-3</item>

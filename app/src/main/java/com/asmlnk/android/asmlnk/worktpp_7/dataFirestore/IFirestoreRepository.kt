@@ -2,7 +2,10 @@ package com.asmlnk.android.asmlnk.worktpp_7.dataFirestore
 
 import com.asmlnk.android.asmlnk.worktpp_7.EquipmentWork.ElectricMotor
 import com.asmlnk.android.asmlnk.worktpp_7.InspectionSchedule.Inspection
+import com.asmlnk.android.asmlnk.worktpp_7.WorkingShift.Electrolysis
+import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.Query
 
 interface IFirestoreRepository {
@@ -31,6 +34,10 @@ interface IFirestoreRepository {
                                                  dayMonth: String ): Query
 
     fun getAllCategoryElectricMotor ( name: String ): CollectionReference
+
+    fun getElectrolysis(): Task<DocumentSnapshot>
+
+    fun addElectrolysis (electrolysis: Electrolysis)
 
     fun addElectricMotor ( electricMotor: ElectricMotor )
 

@@ -19,15 +19,18 @@ class WorkingShiftFragment: Fragment() {
         fun onInspectionScheduleSelected(workingShift: String)
         fun onGeneratorInsulationSelected()
         fun onElectrolysisSelected()
+        fun onEquipmentListSelected()
     }
 
+    private lateinit var buttonEquipment: Button
     private lateinit var buttonCompressor: Button
     private lateinit var buttonControlMeasurement: Button
     private lateinit var buttonDayShift: Button
     private lateinit var buttonNightShift: Button
     private lateinit var buttonGeneratorInsulation: Button
     private lateinit var buttonElectrolysis: Button
-    private lateinit var textInspectionSchedule :TextView
+    private lateinit var textInspectionSchedule:TextView
+
 
     private var callbacks: Callbacks? = null
 
@@ -43,6 +46,7 @@ class WorkingShiftFragment: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.working_shift_fragment, container, false)
 
+        buttonEquipment = view.findViewById(R.id.button_equipment) as Button
         buttonDayShift = view.findViewById(R.id.day_shift) as Button
         buttonNightShift = view.findViewById(R.id.night_shift) as Button
         buttonCompressor = view.findViewById(R.id.button_compressor) as Button
@@ -56,6 +60,10 @@ class WorkingShiftFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        buttonEquipment.setOnClickListener {
+            callbacks?.onEquipmentListSelected()
+        }
 
         buttonCompressor.setOnClickListener {
             callbacks?.onCompressorSelected()

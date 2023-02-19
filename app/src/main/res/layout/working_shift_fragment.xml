@@ -55,21 +55,38 @@
         app:layout_constraintTop_toBottomOf="@+id/inspection_schedule_text_view" />
 
     <Button
+        android:id="@+id/button_equipment"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="10dp"
+        android:background="@android:drawable/spinner_background"
+        android:text="@string/equipment_work"
+        android:textColor="#433C29"
+        app:backgroundTint="#DFDFE1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/day_shift" />
+
+    <Button
         android:id="@+id/button_compressor"
         style="@android:style/Widget.Holo.Light.Button.Inset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:textColor="#433C29"
         android:background="@android:drawable/spinner_background"
         android:text="@string/compressor"
+        android:textColor="#433C29"
         app:backgroundTint="#DFDFE1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/electrolysis" />
 
     <Button
         android:id="@+id/control_measurement"
@@ -77,15 +94,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
-        android:textColor="#433C29"
-        android:layout_marginRight="10dp"
         android:background="@android:drawable/spinner_background"
         android:text="@string/control_measurement"
+        android:textColor="#433C29"
         app:backgroundTint="#DFDFE1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_compressor" />
 
@@ -102,7 +118,7 @@
         android:textColor="#433C29"
         app:backgroundTint="#DFDFE1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/control_measurement" />
 
@@ -121,6 +137,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/generator_insulation" />
+        app:layout_constraintTop_toBottomOf="@+id/button_equipment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
